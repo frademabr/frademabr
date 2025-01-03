@@ -48,7 +48,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         sx={[
           (theme) => ({
             // paddingBottom: '40px',
-            paddingTop: '80px',
+            paddingTop: '180px',
             ...theme.mixins.bgGradient({
               images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
@@ -59,26 +59,24 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         ]}
         {...other}
       >
-        <Container className="mb-5">
-          <Typography
-            className="justify-center text-indigo-950"
-            marginTop={'70px'}
-            paddingBottom={'80px'}
-            fontSize={'182px'}
-            fontWeight={'900'}
-            sx={{
-              textAlign: 'center',
-              // color: '#5C6BC0',
-              // mixBlendMode: 'soft-light',
-              // color: 'InfoBackground',
-              mb: { xs: 5, md: 10 },
-              mx: 'auto',
-            }}
-          >
-            FRADEMA
-          </Typography>
-        </Container>
-
+        {/* <Container className="mb-5"></Container> */}
+        <Typography
+          className=""
+          // marginTop={'70px'}
+          // paddingBottom={'80px'}
+          fontSize={'182px'}
+          fontWeight={'900'}
+          sx={{
+            textAlign: 'center',
+            // color: '#5C6BC0',
+            mixBlendMode: 'soft-light',
+            // color: 'InfoBackground',
+            mb: { xs: 5, md: 10 },
+            mx: 'auto',
+          }}
+        >
+          FRADEMA
+        </Typography>
         <Box
           component="section"
           sx={[
@@ -91,14 +89,14 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               }),
               color: 'common.white',
               py: { xs: 30, md: 35 },
-              marginTop: '-152px',
+              marginTop: '-222px',
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
           {...other}
         >
-          <Container>
-            {/* <Typography
+          {/* <Container> */}
+          {/* <Typography
               sx={{
                 mt: 1,
                 mx: 'auto',
@@ -112,7 +110,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               teste
             </Typography> */}
 
-            {/* <Timeline position="alternate">
+          {/* <Timeline position="alternate">
             {TIMELINES.map((value, index) => (
               <TimelineItem key={value.title}>
                 <TimelineSeparator>
@@ -120,7 +118,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                   <TimelineConnector />
                 </TimelineSeparator> */}
 
-            {/* <TimelineContent sx={{ pb: { xs: 3, md: 5 } }}>
+          {/* <TimelineContent sx={{ pb: { xs: 3, md: 5 } }}>
                   <Typography variant="overline" sx={{ color: `${COLORS[index]}.main` }}>
                     FASE {index + 1}
                   </Typography>
@@ -136,10 +134,10 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                     {value.description}
                   </Typography>
                 </TimelineContent> */}
-            {/* </TimelineItem>
+          {/* </TimelineItem>
             ))}
           </Timeline> */}
-          </Container>
+          {/* </Container> */}
         </Box>
       </Box>
       <Divider component="section" className="h-0 border-r-8  bg-gray-600" />

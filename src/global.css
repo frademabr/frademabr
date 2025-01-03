@@ -33,6 +33,10 @@
 /** **************************************
 * Baseline
 *************************************** */
+*{
+  border-size: border-box;
+}
+
 html {
   height: 100%;
   -webkit-overflow-scrolling: touch;
