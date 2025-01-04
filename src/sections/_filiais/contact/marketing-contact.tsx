@@ -1,6 +1,11 @@
 'use client';
 
+import * as React from 'react';
+
 import { Check } from 'lucide-react';
+
+import { useFormState, useFormStatus } from 'react-dom';
+import { contactFormAction } from 'lib/actions';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@components/components/ui/avatar';
 import { Button } from '@components/components/ui/button';
@@ -16,6 +21,19 @@ import {
 import { Divider } from 'src/components/catalyst-layout/divider';
 
 export function MarketingContact() {
+  const [state, formAction, pending] = React.useActionState(contactFormAction, {
+    defaultValues: {
+      filiais: [],
+      email: '',
+      empresa: '',
+      nome: '',
+      cel: '',
+      outros: [],
+    },
+    success: false,
+    errors: null,
+  });
+
   return (
     <section className="relative py-12">
       <Divider my-6 className="mb-20" />
@@ -85,95 +103,121 @@ export function MarketingContact() {
         </div>
         <div className="flex w-full justify-center lg:mt-2.5">
           <div className="relative flex w-full min-w-[20rem] max-w-[30rem] flex-col items-center overflow-visible md:min-w-[24rem]">
-            <form className="z-10 space-y-6">
+            <form action={formAction} className="z-10 space-y-6">
               <div className="mb-6 w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-xl">
+                {state.success ? (
+                  <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                    <Check className="size-4" />
+                    Seu formulário foi enviado com sucesso.
+                  </p>
+                ) : null}
                 <div>
-                  <div className="mb-2.5 text-sm font-medium">
+                  <div className="mb-2.5 text-sm font-medium" data-invalid={!!state.errors?.nome}>
                     <label htmlFor="nome">Nome Completo</label>
                   </div>
                   <Input id="nome" name="nome" placeholder="José Silva" />
+                  {state.errors?.nome && (
+                    <p id="error-nome" className="text-destructive text-sm">
+                      {state.errors.nome}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <div className="mb-2.5 text-sm font-medium">
+                  <div
+                    className="mb-2.5 text-sm font-medium"
+                    data-invalid={!!state.errors?.empresa}
+                  >
                     <label htmlFor="empresa">Empresa </label>
                     <span className="text-muted-foreground">(Opcional)</span>
                   </div>
                   <Input id="empresa" name="empresa" placeholder="Fradema" />
                 </div>
                 <div>
-                  <div className="mb-2.5 text-sm font-medium">
+                  <div className="mb-2.5 text-sm font-medium" data-invalid={!!state.errors?.cel}>
                     <label htmlFor="cel">Celular</label>
                   </div>
                   <Input id="cel" name="cel" placeholder="+55 (xx) 92345 6789" />
+                  {state.errors?.cel && (
+                    <p id="error-cel" className="text-destructive text-sm">
+                      {state.errors.cel}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="email">Email </label>
-                    <span className="text-muted-foreground">(Opcional)</span>
+                  <div className="mb-2.5 text-sm font-medium" data-invalid={!!state.errors?.email}>
+                    <div className="mb-2.5 text-sm font-medium">
+                      <label htmlFor="email">Email </label>
+                      {/* <span className="text-muted-foreground"></span> */}
+                    </div>
+                    <Input id="email" name="email" placeholder="nome@empresa.com" />
+                    {state.errors?.email && (
+                      <p id="error-email" className="text-destructive text-sm">
+                        {state.errors.email}
+                      </p>
+                    )}
                   </div>
-                  <Input id="email" name="email" placeholder="nome@empresa.com" />
+                  <div>
+                    <div className="mb-2.5 text-sm font-medium">
+                      <label htmlFor="filiais">Filial Fradema</label>
+                    </div>
+                    <Select>
+                      <SelectTrigger id="filiais" name="filiais">
+                        <SelectValue placeholder="Selecione" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="rj">Fradema - RJ</SelectItem>
+                        <SelectItem value="sp">Fradema - SP</SelectItem>
+                        <SelectItem value="campinas">Fradema - Campinas</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  {/* <div>
+                <div className="mb-2.5 text-sm font-medium">
+                  <label htmlFor="companySize">Company size</label>
                 </div>
-                <div>
-                  <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="filiais">Filial Fradema</label>
+                <Select>
+                  <SelectTrigger id="companySize" name="companySize">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1-10">1-10</SelectItem>
+                    <SelectItem value="11-50">11-50</SelectItem>
+                    <SelectItem value="51-200">51-200</SelectItem>
+                    <SelectItem value="200+">200+</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div> */}
+                  <div>
+                    <div className="mb-2.5 text-sm font-medium">
+                      <label htmlFor="id">
+                        Como descobriu a Empresa ?{' '}
+                        <span className="text-muted-foreground">(Opcional)</span>
+                      </label>
+                    </div>
+                    <Select>
+                      <SelectTrigger id="descobriu" name="descobriu">
+                        <SelectValue placeholder="Selecione" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="web">Web</SelectItem>
+                        <SelectItem value="clientes">Outros clientes</SelectItem>
+                        <SelectItem value="redes">Redes sociais</SelectItem>
+                        <SelectItem value="outros">Outros</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
-                  <Select>
-                    <SelectTrigger id="filiais" name="filiais">
-                      <SelectValue placeholder="Selecione" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="rj">Fradema - RJ</SelectItem>
-                      <SelectItem value="sp">Fradema - SP</SelectItem>
-                      <SelectItem value="campinas">Fradema - Campinas</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                {/* <div>
-                  <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="companySize">Company size</label>
-                  </div>
-                  <Select>
-                    <SelectTrigger id="companySize" name="companySize">
-                      <SelectValue placeholder="Select" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="1-10">1-10</SelectItem>
-                      <SelectItem value="11-50">11-50</SelectItem>
-                      <SelectItem value="51-200">51-200</SelectItem>
-                      <SelectItem value="200+">200+</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div> */}
-                <div>
-                  <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="id">
-                      Como descobriu a Empresa ?{' '}
-                      <span className="text-muted-foreground">(Opcional)</span>
-                    </label>
-                  </div>
-                  <Select>
-                    <SelectTrigger id="descobriu" name="descobriu">
-                      <SelectValue placeholder="Selecione" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="web">Web</SelectItem>
-                      <SelectItem value="clientes">Outros clientes</SelectItem>
-                      <SelectItem value="redes">Redes sociais</SelectItem>
-                      <SelectItem value="outros">Outros</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="flex w-full flex-col justify-end space-y-3 pt-2">
-                  <Button className="bg-indigo-400" type="submit">
-                    Enviar formulário
-                  </Button>
-                  <div className="text-xs text-muted-foreground">
-                    Seus dados serão vistos e armazenados somente pela empresa. Para saber mais,
-                    leia nossa{' '}
-                    <a href="#" className="underline">
-                      política de segurança
-                    </a>
-                    .
+                  <div className="flex w-full flex-col justify-end space-y-3 pt-2">
+                    <Button className="bg-indigo-400" type="submit" disabled={pending}>
+                      {pending ? 'Enviando...' : ' Formulário Enviado!'}
+                    </Button>
+                    <div className="text-xs text-muted-foreground">
+                      Seus dados serão vistos e armazenados somente pela empresa. Para saber mais,
+                      leia nossa{' '}
+                      <a href="#" className="underline">
+                        política de segurança
+                      </a>
+                      .
+                    </div>
                   </div>
                 </div>
               </div>

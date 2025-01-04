@@ -1,4 +1,4 @@
-'user server';
+'use server';
 
 import { success } from 'src/theme';
 import { MarketingContactSchema } from './schema';
@@ -16,15 +16,16 @@ export async function contactFormAction(_prevState: unknown, formData: FormData)
     // Replace this with your actual form submission logic.
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    console.log(data);
+    console.log(data); // I think this is what goes into supabase, let's see
 
     return {
       defaultValues: {
-        filiais: '',
+        filiais: [],
         email: '',
         empresa: '',
         nome: '',
         cel: '',
+        outros: [],
       },
       success: true,
       errors: null,
