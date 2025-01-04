@@ -20,13 +20,10 @@ export async function contactFormAction(_prevState: unknown, formData: FormData)
 
     return {
       defaultValues: {
-        serviços: '',
+        filiais: '',
         email: '',
         empresa: '',
-        website: '',
-        mensagem: '',
         nome: '',
-        sobrenome: '',
         cel: '',
       },
       success: true,

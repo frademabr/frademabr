@@ -1,3 +1,5 @@
+'use client';
+
 import { Check } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@components/components/ui/avatar';
@@ -87,22 +89,22 @@ export function MarketingContact() {
               <div className="mb-6 w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-xl">
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="fullName">Nome Completo</label>
+                    <label htmlFor="nome">Nome Completo</label>
                   </div>
-                  <Input id="fullName" name="fullName" placeholder="José Silva" />
+                  <Input id="nome" name="nome" placeholder="José Silva" />
                 </div>
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="company">Empresa </label>
+                    <label htmlFor="empresa">Empresa </label>
                     <span className="text-muted-foreground">(Opcional)</span>
                   </div>
-                  <Input id="company" name="company" placeholder="Fradema" />
+                  <Input id="empresa" name="empresa" placeholder="Fradema" />
                 </div>
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="phone">Celular</label>
+                    <label htmlFor="cel">Celular</label>
                   </div>
-                  <Input id="phone" name="phone" placeholder="+55 (xx) 92345 6789" />
+                  <Input id="cel" name="cel" placeholder="+55 (xx) 92345 6789" />
                 </div>
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
@@ -113,10 +115,10 @@ export function MarketingContact() {
                 </div>
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="country">Filial Fradema</label>
+                    <label htmlFor="filiais">Filial Fradema</label>
                   </div>
                   <Select>
-                    <SelectTrigger id="country" name="country">
+                    <SelectTrigger id="filiais" name="filiais">
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
@@ -150,14 +152,14 @@ export function MarketingContact() {
                     </label>
                   </div>
                   <Select>
-                    <SelectTrigger id="referral" name="referral">
+                    <SelectTrigger id="descobriu" name="descobriu">
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="search">Web</SelectItem>
-                      <SelectItem value="search">Outros clientes</SelectItem>
-                      <SelectItem value="search">Redes sociais</SelectItem>
-                      <SelectItem value="search">Outros</SelectItem>
+                      <SelectItem value="web">Web</SelectItem>
+                      <SelectItem value="clientes">Outros clientes</SelectItem>
+                      <SelectItem value="redes">Redes sociais</SelectItem>
+                      <SelectItem value="outros">Outros</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
