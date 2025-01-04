@@ -89,7 +89,7 @@ export function MarketingContact() {
                   <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="fullName">Nome Completo</label>
                   </div>
-                  <Input id="fullName" name="fullName" placeholder="Yasmin Arrighi" />
+                  <Input id="fullName" name="fullName" placeholder="José Silva" />
                 </div>
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
@@ -106,7 +106,8 @@ export function MarketingContact() {
                 </div>
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
-                    <label htmlFor="email">Email (Principal)</label>
+                    <label htmlFor="email">Email </label>
+                    <span className="text-muted-foreground">(Opcional)</span>
                   </div>
                   <Input id="email" name="email" placeholder="nome@empresa.com" />
                 </div>

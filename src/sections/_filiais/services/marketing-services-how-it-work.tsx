@@ -89,7 +89,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               }),
               color: 'common.white',
               py: { xs: 30, md: 35 },
-              marginTop: '-222px',
+              marginTop: '-230px',
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
