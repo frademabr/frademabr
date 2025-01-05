@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   _jobs,
@@ -8,21 +8,22 @@ import {
   _jobsByCompanies,
   _jobsByCountries,
   _jobsByCategories,
-} from 'src/_mock';
+} from "src/_mock";
 
-import { _pricingHome } from 'src/_mock';
+import { _pricingHome } from "src/_mock";
 
-import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
+import { ScrollProgress, useScrollProgress } from "src/components/animate/scroll-progress";
 
-import { HomeFAQs } from '../home-faqs';
+import { HomeFAQs } from "../home-faqs";
 
-import { MarketingServicesHowItWork } from 'src/sections/_filiais/services/marketing-services-how-it-work';
+import { MarketingServicesHowItWork } from "src/sections/_filiais/services/marketing-services-how-it-work";
 
-import { CareerLandingHotCategories } from 'src/sections/_career/landing/career-landing-hot-categories';
+import { CareerLandingHotCategories } from "src/sections/_career/landing/career-landing-hot-categories";
 
-import { EcommerceLandingHero } from 'src/sections/_ecommerce/landing/ecommerce-landing-hero';
+import { EcommerceLandingHero } from "src/sections/_ecommerce/landing/ecommerce-landing-hero";
 
-import { MarketingContact } from 'src/sections/_filiais/contact/marketing-contact';
+import { MarketingContact } from "src/sections/_filiais/contact/marketing-contact";
+import { MarketingContactForm } from "src/sections/_filiais/contact/marketing-contact-form";
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +35,7 @@ export function HomeView() {
       <ScrollProgress
         variant="linear"
         progress={pageProgress.scrollYProgress}
-        sx={{ position: 'fixed' }}
+        sx={{ position: "fixed" }}
       />
 
       <MarketingServicesHowItWork />
@@ -45,6 +46,8 @@ export function HomeView() {
 
       {/* rever marketingcontactform */}
       <MarketingContact />
+
+      <MarketingContactForm />
 
       <HomeFAQs />
     </>

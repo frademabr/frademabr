@@ -1,38 +1,110 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { Check } from 'lucide-react';
+import { z } from "zod";
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { contactFormAction } from 'lib/actions';
+import { useForm } from "react-hook-form";
 
-import { Avatar, AvatarFallback, AvatarImage } from '@components/components/ui/avatar';
-import { Button } from '@components/components/ui/button';
-import { Input } from '@components/components/ui/input'; // Input
+import { Check } from "lucide-react";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@components/components/ui/avatar";
+import { Button } from "@components/components/ui/button";
+import { Input } from "@components/components/ui/input"; // Input
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@components/components/ui/select';
+} from "@components/components/ui/select";
 
-import { Divider } from 'src/components/catalyst-layout/divider';
+import { Divider } from "src/components/catalyst-layout/divider";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { MarketingContactSchema } from "lib/schema";
+import { BoxProps } from "@mui/material";
 
-export function MarketingContact() {
-  const [state, formAction, pending] = React.useActionState(contactFormAction, {
-    defaultValues: {
-      filiais: [],
-      email: '',
-      empresa: '',
-      nome: '',
-      cel: '',
-      outros: [],
-    },
-    success: false,
-    errors: null,
+//-----------------------------------------------------------------------------------------
+export type IFormInput = z.infer<typeof MarketingContactSchema>;
+
+// export const MarketingContactSchema = z.object({
+//   filiais: z
+//     // .string({ message: "Escolha uma filial Fradema!" })
+//     .array(
+//       z.object({
+//         value: z.string(),
+//         label: z.string(),
+//       })
+//     )
+//     .min(1, { message: "Escolha uma opção para prosseguir!" }),
+//   outros: z.array(
+//     z.object({
+//       value: z.string(),
+//       label: z.string(),
+//     })
+//   ),
+//   email: z.string().email({ message: "Email precisa ser válido!" }),
+//   empresa: z.string(),
+//   nome: z
+//     .string({ message: "Campo requerido!" })
+//     .regex(/^[a-zA-Z]+$/, { message: "Formato Inválido" })
+//     .min(2, { message: "Nome é requerido!" }),
+//   cel: z
+//     .string()
+//     .trim()
+//     .refine(
+//       (cel) => {
+//         const sections = cel.split("-");
+//         if (
+//           sections.length !== 2 ||
+//           sections[0].length !== 2 ||
+//           sections[1].length !== 5 ||
+//           sections[2].length !== 4
+//         ) {
+//           return false;
+//         }
+//         return true;
+//       },
+//       { message: "Celular deve ser no formato (xx)-99888-7766" }
+//     ),
+// });
+//------------------------------------------------------------------------------------------
+export function MarketingContact({ sx, ...other }: BoxProps) {
+  const defaultValues: IFormInput = {
+    filiais: [],
+    outros: [],
+    email: "",
+    empresa: "",
+    nome: "",
+    cel: "",
+  };
+
+  // const methods = useForm<IFormInput>({
+  //   resolver: zodResolver(MarketingContactSchema),
+  //   defaultValues,
+  // });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>({
+    resolver: zodResolver(MarketingContactSchema),
   });
+
+  const onSubmit = (data: IFormInput) => {
+    console.log(data);
+  };
+
+  // const onSubmit = handleSubmit(async (data) => {
+  //   try {
+  //     await new Promise((resolve) => setTimeout(resolve, 500));
+  //     reset();
+  //     console.info("DATA", data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // });
 
   return (
     <section className="relative py-12">
@@ -103,74 +175,80 @@ export function MarketingContact() {
         </div>
         <div className="flex w-full justify-center lg:mt-2.5">
           <div className="relative flex w-full min-w-[20rem] max-w-[30rem] flex-col items-center overflow-visible md:min-w-[24rem]">
-            <form action={formAction} className="z-10 space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-6 w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-xl">
-                {state.success ? (
-                  <p className="text-muted-foreground flex items-center gap-2 text-sm">
-                    <Check className="size-4" />
-                    Seu formulário foi enviado com sucesso.
-                  </p>
-                ) : null}
                 <div>
-                  <div className="mb-2.5 text-sm font-medium" data-invalid={!!state.errors?.nome}>
+                  <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="nome">Nome Completo</label>
                   </div>
-                  <Input id="nome" name="nome" placeholder="José Silva" />
-                  {state.errors?.nome && (
-                    <p id="error-nome" className="text-destructive text-sm">
-                      {state.errors.nome}
-                    </p>
-                  )}
+                  <Input {...register("nome")} id="nome" name="nome" placeholder="José Silva" />
                 </div>
+                {errors?.nome?.message && (
+                  <p className="text-red-700 mb-4">{errors.nome.message}</p>
+                )}
                 <div>
-                  <div
-                    className="mb-2.5 text-sm font-medium"
-                    data-invalid={!!state.errors?.empresa}
-                  >
+                  <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="empresa">Empresa </label>
                     <span className="text-muted-foreground">(Opcional)</span>
                   </div>
-                  <Input id="empresa" name="empresa" placeholder="Fradema" />
+                  <Input
+                    {...register("empresa")}
+                    id="empresa"
+                    name="empresa"
+                    placeholder="Fradema"
+                  />
                 </div>
+
                 <div>
-                  <div className="mb-2.5 text-sm font-medium" data-invalid={!!state.errors?.cel}>
+                  <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="cel">Celular</label>
                   </div>
-                  <Input id="cel" name="cel" placeholder="+55 (xx) 92345 6789" />
-                  {state.errors?.cel && (
-                    <p id="error-cel" className="text-destructive text-sm">
-                      {state.errors.cel}
-                    </p>
-                  )}
+                  <Input
+                    {...register("cel")}
+                    type="number"
+                    id="cel"
+                    name="cel"
+                    placeholder="(xx)-99888-7766"
+                  />
                 </div>
+                {errors?.cel?.message && <p className="text-red-700 mb-4">{errors.cel.message}</p>}
                 <div>
-                  <div className="mb-2.5 text-sm font-medium" data-invalid={!!state.errors?.email}>
+                  <div className="mb-2.5 text-sm font-medium">
                     <div className="mb-2.5 text-sm font-medium">
                       <label htmlFor="email">Email </label>
                       {/* <span className="text-muted-foreground"></span> */}
                     </div>
-                    <Input id="email" name="email" placeholder="nome@empresa.com" />
-                    {state.errors?.email && (
-                      <p id="error-email" className="text-destructive text-sm">
-                        {state.errors.email}
-                      </p>
-                    )}
+                    <Input
+                      {...register("email")}
+                      id="email"
+                      name="email"
+                      type="text"
+                      placeholder="nome@empresa.com"
+                    />
                   </div>
+                  {errors?.email?.message && (
+                    <p className="text-red-700 mb-4">{errors.email.message}</p>
+                  )}
                   <div>
                     <div className="mb-2.5 text-sm font-medium">
                       <label htmlFor="filiais">Filial Fradema</label>
                     </div>
-                    <Select>
+                    <Select {...register("filiais")}>
                       <SelectTrigger id="filiais" name="filiais">
                         <SelectValue placeholder="Selecione" />
                       </SelectTrigger>
+
                       <SelectContent>
                         <SelectItem value="rj">Fradema - RJ</SelectItem>
                         <SelectItem value="sp">Fradema - SP</SelectItem>
                         <SelectItem value="campinas">Fradema - Campinas</SelectItem>
                       </SelectContent>
                     </Select>
+                    {errors?.filiais?.message && (
+                      <p className="text-red-700 mb-4">{errors.filiais.message}</p>
+                    )}
                   </div>
+
                   {/* <div>
                 <div className="mb-2.5 text-sm font-medium">
                   <label htmlFor="companySize">Company size</label>
@@ -190,12 +268,12 @@ export function MarketingContact() {
                   <div>
                     <div className="mb-2.5 text-sm font-medium">
                       <label htmlFor="id">
-                        Como descobriu a Empresa ?{' '}
+                        Como descobriu a Empresa ?{" "}
                         <span className="text-muted-foreground">(Opcional)</span>
                       </label>
                     </div>
                     <Select>
-                      <SelectTrigger id="descobriu" name="descobriu">
+                      <SelectTrigger id="outros" name="outros">
                         <SelectValue placeholder="Selecione" />
                       </SelectTrigger>
                       <SelectContent>
@@ -207,12 +285,16 @@ export function MarketingContact() {
                     </Select>
                   </div>
                   <div className="flex w-full flex-col justify-end space-y-3 pt-2">
-                    <Button className="bg-indigo-400" type="submit" disabled={pending}>
-                      {pending ? 'Enviando...' : ' Formulário Enviado!'}
+                    <Button
+                      onClick={handleSubmit(onSubmit)}
+                      className="bg-indigo-400 hover:bg-indigo-500 text-white"
+                      type="submit"
+                    >
+                      Enviar formulário
                     </Button>
                     <div className="text-xs text-muted-foreground">
                       Seus dados serão vistos e armazenados somente pela empresa. Para saber mais,
-                      leia nossa{' '}
+                      leia nossa{" "}
                       <a href="#" className="underline">
                         política de segurança
                       </a>

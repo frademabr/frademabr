@@ -1,10 +1,10 @@
-'use server';
+"use server";
 
-import { success } from 'src/theme';
-import { MarketingContactSchema } from './schema';
-import { z } from 'zod';
+import { success } from "src/theme";
+import { MarketingContactSchema } from "./schema";
+import { z } from "zod";
 
-export async function contactFormAction(_prevState: unknown, formData: FormData) {
+export async function contactFormAction(_prevState: any, formData: FormData) {
   const defaultValues = z
     .record(z.string(), z.string())
     .parse(Object.fromEntries(formData.entries()));
@@ -21,10 +21,10 @@ export async function contactFormAction(_prevState: unknown, formData: FormData)
     return {
       defaultValues: {
         filiais: [],
-        email: '',
-        empresa: '',
-        nome: '',
-        cel: '',
+        email: "",
+        empresa: "",
+        nome: "",
+        cel: "",
         outros: [],
       },
       success: true,
@@ -38,7 +38,7 @@ export async function contactFormAction(_prevState: unknown, formData: FormData)
         errors: Object.fromEntries(
           Object.entries(error.flatten().fieldErrors).map(([key, value]) => [
             key,
-            value?.join(', '),
+            value?.join(", "),
           ])
         ),
       };

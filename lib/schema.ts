@@ -1,15 +1,19 @@
-import { z as zod } from 'zod';
+import * as z from "zod";
 
-// export type MarketingContactSchemaType = zod.infer<typeof MarketingContactSchema>;
-
-export const MarketingContactSchema = zod.object({
-  filiais: zod.string().array().min(1, { message: 'Escolha uma filial Fradema!' }),
-  outros: zod.string().array().min(1, { message: 'Escolha uma opção para prosseguir!' }),
-  email: zod
+export const MarketingContactSchema = z.object({
+  filiais: z
+    .string({ message: "Escolha uma filial Fradema!" })
+    .array()
+    .min(3,{ message: "Escolha uma filial Fradema!" }),
+  outros: z.string().array().optional(),
+  email: z.string().email({ message: "Email precisa ser válido!" }),
+  empresa: z.string().optional(),
+  nome: z
+    .string({ message: "Campo requerido!" })
+    .regex(/^[a-zA-Z]+$/, { message: "Formato Inválido" })
+    .min(2, { message: "Nome é requerido!" }),
+  cel: z
     .string()
-    .min(5, { message: 'Digite seu Email' })
-    .email({ message: 'Email precisa ser válido!' }),
-  empresa: zod.string(),
-  nome: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
-  cel: zod.string().min(11, { message: 'Número de celular não compatível' }),
+    .regex(/^[0-9]*$/)
+    .min(11, { message: "Celular deve ser no formato (xx)999998877, com DDD" }),
 });
