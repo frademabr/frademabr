@@ -208,7 +208,7 @@ export function MarketingContact({ sx, ...other }: BoxProps) {
                     type="number"
                     id="cel"
                     name="cel"
-                    placeholder="(xx)-99888-7766"
+                    placeholder="(xx)99888-7766"
                   />
                 </div>
                 {errors?.cel?.message && <p className="text-red-700 mb-4">{errors.cel.message}</p>}
