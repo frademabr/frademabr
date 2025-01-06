@@ -21,11 +21,29 @@ import {
 
 import { Divider } from "src/components/catalyst-layout/divider";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MarketingContactSchema } from "lib/schema";
+// import { MarketingContactSchema } from "lib/schema";
 import { BoxProps } from "@mui/material";
 
 //-----------------------------------------------------------------------------------------
 export type IFormInput = z.infer<typeof MarketingContactSchema>;
+
+export const MarketingContactSchema = z.object({
+  filiais: z
+    .string({ message: "Escolha uma filial Fradema!" })
+    .array()
+    .min(3, { message: "Escolha uma filial Fradema!" }),
+  outros: z.string().array().optional(),
+  email: z.string().email({ message: "Email precisa ser válido!" }),
+  empresa: z.string().optional(),
+  nome: z
+    .string({ message: "Campo requerido!" })
+    .regex(/^[a-zA-Z]+$/, { message: "Formato Inválido" })
+    .min(2, { message: "Nome é requerido!" }),
+  cel: z
+    .string()
+    .regex(/^[0-9]*$/)
+    .min(11, { message: "Celular deve ser no formato com DDD (xx)" }),
+});
 
 // import zod schema
 //------------------------------------------------------------------------------------------
