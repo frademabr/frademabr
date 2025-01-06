@@ -74,7 +74,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                 // color: '#5C6BC0',
                 mixBlendMode: "soft-light",
                 // color: 'InfoBackground',
-                mb: { xs: 7, md: 5, lg: 10 },
+                mb: { xs: 7, md: 5, lg: 10, xl: 15 },
                 mx: "auto",
               }}
             >
