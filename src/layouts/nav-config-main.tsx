@@ -2,6 +2,7 @@ import { paths } from "src/routes/paths";
 
 import { _caseStudies } from "src/_mock";
 import { CONFIG } from "src/global-config";
+import { title } from "process";
 
 // ----------------------------------------------------------------------
 
@@ -111,4 +112,5 @@ export const navData = [
   { title: "Filiais", path: paths.filiais.caseStudies }, // paths.marketing.caseStudies
   { title: "Páginas", path: "#" }, // paths.pages, children: pageLinks
   { title: "Blog", path: "#" },
+  { title: "Serviços", path: "#" }, // páginas vai virar serviços com dropdown
 ];

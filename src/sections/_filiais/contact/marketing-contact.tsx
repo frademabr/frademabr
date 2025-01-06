@@ -27,47 +27,7 @@ import { BoxProps } from "@mui/material";
 //-----------------------------------------------------------------------------------------
 export type IFormInput = z.infer<typeof MarketingContactSchema>;
 
-// export const MarketingContactSchema = z.object({
-//   filiais: z
-//     // .string({ message: "Escolha uma filial Fradema!" })
-//     .array(
-//       z.object({
-//         value: z.string(),
-//         label: z.string(),
-//       })
-//     )
-//     .min(1, { message: "Escolha uma opção para prosseguir!" }),
-//   outros: z.array(
-//     z.object({
-//       value: z.string(),
-//       label: z.string(),
-//     })
-//   ),
-//   email: z.string().email({ message: "Email precisa ser válido!" }),
-//   empresa: z.string(),
-//   nome: z
-//     .string({ message: "Campo requerido!" })
-//     .regex(/^[a-zA-Z]+$/, { message: "Formato Inválido" })
-//     .min(2, { message: "Nome é requerido!" }),
-//   cel: z
-//     .string()
-//     .trim()
-//     .refine(
-//       (cel) => {
-//         const sections = cel.split("-");
-//         if (
-//           sections.length !== 2 ||
-//           sections[0].length !== 2 ||
-//           sections[1].length !== 5 ||
-//           sections[2].length !== 4
-//         ) {
-//           return false;
-//         }
-//         return true;
-//       },
-//       { message: "Celular deve ser no formato (xx)-99888-7766" }
-//     ),
-// });
+// import zod schema
 //------------------------------------------------------------------------------------------
 export function MarketingContact({ sx, ...other }: BoxProps) {
   const defaultValues: IFormInput = {

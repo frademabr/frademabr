@@ -1,56 +1,41 @@
-import type { BoxProps } from '@mui/material/Box';
+import type { BoxProps } from "@mui/material/Box";
 
-import { number, z as zod, ZodNumber } from 'zod';
-import { useForm } from 'react-hook-form';
-import { varAlpha } from 'minimal-shared/utils';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { number, z as zod, ZodNumber } from "zod";
+import { useForm } from "react-hook-form";
+import { varAlpha } from "minimal-shared/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import Box from '@mui/material/Box';
-import ButtonBase from '@mui/material/ButtonBase';
-import Typography from '@mui/material/Typography';
-import LoadingButton from '@mui/lab/LoadingButton';
-import FormHelperText from '@mui/material/FormHelperText';
+import Box from "@mui/material/Box";
+import ButtonBase from "@mui/material/ButtonBase";
+import Typography from "@mui/material/Typography";
+import LoadingButton from "@mui/lab/LoadingButton";
+import FormHelperText from "@mui/material/FormHelperText";
 
-import { SupabaseClient } from '@supabase/supabase-js';
+import { SupabaseClient } from "@supabase/supabase-js";
 
-import { fCurrency } from 'src/utils/format-number';
+import { fCurrency } from "src/utils/format-number";
 
-import { _tags } from 'src/_mock';
+import { _tags } from "src/_mock";
 
-import { Form, Field } from 'src/components/hook-form';
-import { NumberInput } from 'src/components/number-input';
+import { MarketingContactSchema } from "lib/schema";
+
+import { Form, Field } from "src/components/hook-form";
+import { NumberInput } from "src/components/number-input";
 
 // ----------------------------------------------------------------------
-
-export type MarketingContactSchemaType = zod.infer<typeof MarketingContactSchema>;
-
-export const MarketingContactSchema = zod.object({
-  serviços: zod.string().array().min(1, { message: 'Escolha uma filial Fradema!' }),
-  email: zod
-    .string()
-    .min(5, { message: 'Digite seu Email' })
-    .email({ message: 'Email precisa ser válido!' }),
-  empresa: zod.string(),
-  website: zod.string(),
-  mensagem: zod.string().min(5, { message: 'Deixe aqui sua mensagem' }),
-  // Not required
-  nome: zod.string().min(2, { message: 'Primeiro nome é requerido!' }),
-  sobrenome: zod.string().min(2, { message: 'Sobrenome nome é requerido!' }),
-  cel: zod.string().min(12, { message: 'Número de celular não compatível' }),
-});
 
 // ----------------------------------------------------------------------
 
 export function MarketingContactForm({ sx, ...other }: BoxProps) {
   const defaultValues: MarketingContactSchemaType = {
-    email: '',
-    website: '',
-    mensagem: '',
+    email: "",
+    website: "",
+    mensagem: "",
     serviços: [],
-    empresa: '',
-    sobrenome: '',
-    nome: '',
-    cel: '',
+    empresa: "",
+    sobrenome: "",
+    nome: "",
+    cel: "",
   };
 
   const methods = useForm<MarketingContactSchemaType>({
@@ -72,7 +57,7 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
       reset();
-      console.info('DATA', data);
+      console.info("DATA", data);
     } catch (error) {
       console.error(error);
     }
@@ -85,13 +70,13 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
 
   const renderServiceOptions = () => (
     <div>
-      <Box sx={{ gap: 1, display: 'flex', flexWrap: 'wrap' }}>
+      <Box sx={{ gap: 1, display: "flex", flexWrap: "wrap" }}>
         {_tags.slice(0, 7).map((serviço) => (
           <ButtonBase
             disableRipple
             key={serviço}
             onClick={() =>
-              setValue('serviços', getSelected(values.serviços, serviço), {
+              setValue("serviços", getSelected(values.serviços, serviço), {
                 shouldValidate: true,
               })
             }
@@ -99,12 +84,12 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
               py: 0.5,
               px: 1.25,
               borderRadius: 1,
-              typography: 'body2',
-              color: 'text.secondary',
-              border: `solid 1px ${varAlpha(theme.vars.palette.grey['500Channel'], 0.2)}`,
+              typography: "body2",
+              color: "text.secondary",
+              border: `solid 1px ${varAlpha(theme.vars.palette.grey["500Channel"], 0.2)}`,
               ...(values.serviços.includes(serviço) && {
-                bgcolor: 'text.primary',
-                color: 'background.paper',
+                bgcolor: "text.primary",
+                color: "background.paper",
               }),
             })}
           >
@@ -125,10 +110,10 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
     <Box
       sx={{
         width: 0.5,
-        display: 'flex',
+        display: "flex",
         gap: { xs: 2.5, md: 2 },
-        flexDirection: { xs: 'column', md: 'row' },
-        backgroundColor: 'white',
+        flexDirection: { xs: "column", md: "row" },
+        backgroundColor: "white",
       }}
     >
       <Field.Text name="nome" label="Nome" />
@@ -140,9 +125,9 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
     <Box
       sx={{
         width: 1,
-        display: 'flex',
+        display: "flex",
         gap: { xs: 2.5, md: 2 },
-        flexDirection: { xs: 'column', md: 'row' },
+        flexDirection: { xs: "column", md: "row" },
       }}
     >
       <Field.Text name="empresa" label="Empresa" />
@@ -172,9 +157,9 @@ export function MarketingContactForm({ sx, ...other }: BoxProps) {
         <Box
           sx={{
             gap: 2.5,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
           }}
         >
           {renderServiceOptions()}

@@ -4,7 +4,7 @@ export const MarketingContactSchema = z.object({
   filiais: z
     .string({ message: "Escolha uma filial Fradema!" })
     .array()
-    .min(3,{ message: "Escolha uma filial Fradema!" }),
+    .min(3, { message: "Escolha uma filial Fradema!" }),
   outros: z.string().array().optional(),
   email: z.string().email({ message: "Email precisa ser válido!" }),
   empresa: z.string().optional(),

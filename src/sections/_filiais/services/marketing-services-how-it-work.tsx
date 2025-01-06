@@ -43,61 +43,65 @@ import { Divider } from "@mui/material";
 
 export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
   return (
-    <div className="md:max-2xl">
-      <Box
-        sx={[
-          (theme) => ({
-            // paddingBottom: '40px',
-            paddingTop: "190px",
-            ...theme.mixins.bgGradient({
-              images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
-            }),
-            color: "common.white",
-            borderBottomStyle: "inset",
-          }),
-          ...(Array.isArray(sx) ? sx : [sx]),
-        ]}
-        {...other}
-      >
-        {/* <Container className="mb-5"></Container> */}
-        <Typography
-          className=""
-          // marginTop={"-70px"}
-          paddingBottom={"8px"}
-          paddingTop={"30px"}
-          fontSize={"182px"}
-          fontWeight={"900"}
-          sx={{
-            textAlign: "center",
-            // color: '#5C6BC0',
-            mixBlendMode: "soft-light",
-            // color: 'InfoBackground',
-            mb: { xs: 5, md: 10 },
-            mx: "auto",
-          }}
-        >
-          FRADEMA
-        </Typography>
+    <div className="relative isolate overflow-hidden">
+      <section className="">
         <Box
-          component="section"
           sx={[
             (theme) => ({
+              // paddingBottom: '40px',
+              paddingTop: "190px",
               ...theme.mixins.bgGradient({
-                images: [
-                  `linear-gradient(to bottom, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${varAlpha(theme.vars.palette.common.blackChannel, 0)})`,
-                  `url(${CONFIG.assetsDir}/assets/images/home/nyblue.png)`,
-                ],
+                images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
               }),
               color: "common.white",
-              py: { xs: 30, md: 35 },
-              marginTop: "-230px",
+              // borderBottomStyle: "inset",
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
           {...other}
         >
-          {/* <Container> */}
-          {/* <Typography
+          {/* <Container className="mb-5"></Container> */}
+          <div className="tracking-tighter">
+            <Typography
+              className="sm:text-5xl"
+              // marginTop={"-100px"}
+              paddingBottom={"8px"}
+              paddingTop={"30px"}
+              fontSize={"182px"}
+              fontWeight={"900"}
+              sx={{
+                textAlign: "center",
+                // color: '#5C6BC0',
+                mixBlendMode: "soft-light",
+                // color: 'InfoBackground',
+                mb: { xs: 7, md: 5, lg: 10 },
+                mx: "auto",
+              }}
+            >
+              FRADEMA
+            </Typography>
+          </div>
+
+          <Box
+            component="section"
+            sx={[
+              (theme) => ({
+                ...theme.mixins.bgGradient({
+                  images: [
+                    `linear-gradient(to bottom, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${varAlpha(theme.vars.palette.common.blackChannel, 0)})`,
+                    `url(${CONFIG.assetsDir}/assets/images/home/nyblue.png)`,
+                  ],
+                }),
+                color: "common.white",
+                py: { xs: 30, md: 35 },
+                marginTop: "-230px",
+              }),
+              ...(Array.isArray(sx) ? sx : [sx]),
+            ]}
+            {...other}
+          >
+            {/* <Container> */}
+            {/* <Typography
               sx={{
                 mt: 1,
                 mx: 'auto',
@@ -111,7 +115,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               teste
             </Typography> */}
 
-          {/* <Timeline position="alternate">
+            {/* <Timeline position="alternate">
             {TIMELINES.map((value, index) => (
               <TimelineItem key={value.title}>
                 <TimelineSeparator>
@@ -119,7 +123,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                   <TimelineConnector />
                 </TimelineSeparator> */}
 
-          {/* <TimelineContent sx={{ pb: { xs: 3, md: 5 } }}>
+            {/* <TimelineContent sx={{ pb: { xs: 3, md: 5 } }}>
                   <Typography variant="overline" sx={{ color: `${COLORS[index]}.main` }}>
                     FASE {index + 1}
                   </Typography>
@@ -135,13 +139,14 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                     {value.description}
                   </Typography>
                 </TimelineContent> */}
-          {/* </TimelineItem>
+            {/* </TimelineItem>
             ))}
           </Timeline> */}
-          {/* </Container> */}
+            {/* </Container> */}
+          </Box>
         </Box>
-      </Box>
-      {/* <Divider component="section" className="h-0 border-r-8  bg-gray-600" /> */}
+        {/* <Divider component="section" className="h-0 border-r-8  bg-gray-600" /> */}
+      </section>
     </div>
   );
 }
