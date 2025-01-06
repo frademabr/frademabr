@@ -11,7 +11,7 @@ import { LocalizationProvider } from "src/locales";
 import { themeConfig, ThemeProvider } from "src/theme";
 import { themeOverrides } from "src/theme/theme-overrides";
 
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from "lib/constants";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -21,7 +21,8 @@ import { MotionLazy } from "src/components/animate/motion-lazy";
 import { SettingsDrawer, defaultSettings, SettingsProvider } from "src/components/settings";
 
 // ----------------------------------------------------------------------
-const inter = Inter({
+const poppins = Poppins({
+  weight: ["300", "400", "500", "700", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
 });
@@ -54,7 +55,7 @@ type Props = {
 
 export default async function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
+    <html lang="en" suppressHydrationWarning className={poppins.className}>
       <body>
         <InitColorSchemeScript
           defaultMode={themeConfig.defaultMode}
