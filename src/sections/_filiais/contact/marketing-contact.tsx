@@ -39,10 +39,10 @@ export function MarketingContact({ sx, ...other }: BoxProps) {
     cel: "",
   };
 
-  // const methods = useForm<IFormInput>({
-  //   resolver: zodResolver(MarketingContactSchema),
-  //   defaultValues,
-  // });
+  const methods = useForm<IFormInput>({
+    resolver: zodResolver(MarketingContactSchema),
+    defaultValues,
+  });
 
   const {
     register,

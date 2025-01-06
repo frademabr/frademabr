@@ -15,5 +15,5 @@ export const MarketingContactSchema = z.object({
   cel: z
     .string()
     .regex(/^[0-9]*$/)
-    .min(11, { message: "Celular deve ser no formato (xx)999998877, com DDD" }),
+    .min(11, { message: "Celular deve ser no formato com DDD (xx)" }),
 });
