@@ -39,14 +39,13 @@ export function ElearningOurClients({ brands, sx, ...other }: Props) {
 
         <Box sx={{ textAlign: "center", mb: { xs: 5, md: 10 } }}>
           <Typography className="px-8" sx={{ color: "text.secondary" }}>
-            A Fradema Consultores Tributários, está há 37 anos no mercado, possuindo vasta
+            A Fradema Consultores Tributários está há 36 anos no mercado, possuindo vasta
             experiência e qualificação para pensar nas melhores soluções em consultoria tributária
             para o seu negócio. Com atuação desde 1988, a Fradema Consultores Tributários possui
             forte atuação em estratégias empresariais e procedimento administrativos nas esferas
-            federal, estadual e municipal, com filiais em todo o território nacional e agora
-            Internacional. Nossos escritórios estão localizados no Distrito Federal, Bahia,
-            Pernambuco, Espírito Santo, Minas Gerais, Rio de Janeiro, Santa Catarina, São Paulo,
-            Paraná e Amazonas. Novas filiais em "New York" e Orlando.
+            federal, estadual e municipal, com filiais em todo o território nacional. Nossos
+            escritórios estão localizados no Distrito Federal, Bahia, Pernambuco, Espírito Santo,
+            Minas Gerais, Rio de Janeiro, Santa Catarina, São Paulo, Paraná e Amazonas.
           </Typography>
         </Box>
 
