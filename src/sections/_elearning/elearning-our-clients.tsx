@@ -43,7 +43,7 @@ export function ElearningOurClients({ brands, sx, ...other }: Props) {
             vasta <strong>experiência e qualificação</strong> para pensar nas{" "}
             <strong>melhores soluções</strong> em <strong>consultoria tributária</strong> para o seu
             negócio. Com atuação <strong>desde 1988</strong>, a{" "}
-            <strong>Fradema Consultores Tributários</strong>
+            <strong>Fradema Consultores Tributários </strong>
             possui{" "}
             <strong>
               forte atuação em estratégias empresariais e procedimento administrativos
