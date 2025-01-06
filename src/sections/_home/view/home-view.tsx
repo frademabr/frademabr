@@ -23,6 +23,7 @@ import { CareerLandingHotCategories } from "src/sections/_career/landing/career-
 import { EcommerceLandingHero } from "src/sections/_ecommerce/landing/ecommerce-landing-hero";
 
 import { MarketingContact } from "src/sections/_filiais/contact/marketing-contact";
+import { ElearningOurClients } from "src/sections/_elearning/elearning-our-clients";
 
 // ----------------------------------------------------------------------
 
@@ -38,6 +39,8 @@ export function HomeView() {
       />
 
       <MarketingServicesHowItWork />
+
+      <ElearningOurClients brands={_brands} />
 
       <CareerLandingHotCategories categories={_jobsByCategories} />
 

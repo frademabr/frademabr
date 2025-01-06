@@ -1,24 +1,24 @@
-import type { BoxProps } from '@mui/material/Box';
-import type { IJobByCategoryProps } from 'src/types/job';
-import type { Variants } from 'framer-motion';
+import type { BoxProps } from "@mui/material/Box";
+import type { IJobByCategoryProps } from "src/types/job";
+import type { Variants } from "framer-motion";
 
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 
-import { m } from 'framer-motion';
+import { m } from "framer-motion";
 
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { SvgColor } from 'src/components/svg-color';
+import { SvgColor } from "src/components/svg-color";
 
 // import { CONFIG } from 'src/global-config';
-import { varAlpha } from 'minimal-shared/utils';
+import { varAlpha } from "minimal-shared/utils";
 
-import { varFade } from 'src/components/animate';
+import { varFade } from "src/components/animate";
 
 // ----------------------------------------------------------------------
-const variants: Variants = varFade('inUp', { distance: 24 });
+const variants: Variants = varFade("inUp", { distance: 24 });
 type Props = BoxProps & {
   categories: IJobByCategoryProps[];
 };
@@ -54,13 +54,13 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
         <Container className=" rounded-2xl border-solid -mt-6">
           <Box
             sx={{
-              display: 'grid',
+              display: "grid",
               gap: { xs: 3, md: 5 },
               my: { xs: 5, md: 10 },
               gridTemplateColumns: {
-                xs: 'repeat(2, 1fr)',
-                sm: 'repeat(3, 1fr)',
-                md: 'repeat(4, 1fr)',
+                xs: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
               },
             }}
           >
@@ -95,33 +95,33 @@ function CategoryItem({ category }: CategoryItemProps) {
   return (
     <div className="hover:fill-indigo-400">
       <Paper
-        className="mb-3 outline-dotted shadow-2xl outline-indigo-400 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-indigo-400"
+        className="mb-3 outline shadow-2xl outline-indigo-400 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-indigo-400"
         // variant="outlined"
         sx={(theme) => ({
           p: 0,
           minWidth: 1,
-          textAlign: 'center',
-          position: 'relative',
-          aspectRatio: '1/1',
+          textAlign: "center",
+          position: "relative",
+          aspectRatio: "1/1",
           borderRadius: 2,
-          display: 'flex',
-          alignItems: 'center',
-          bgcolor: 'transparent',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          color: 'white',
+          display: "flex",
+          alignItems: "center",
+          bgcolor: "transparent",
+          justifyContent: "center",
+          flexDirection: "column",
+          color: "white",
           // color: 'dodgerblue',
           // color: 'blueviolet',
           // boxShadow: theme.vars.customShadows.card,
-          transition: theme.transitions.create(['all']),
-          '&:hover': {
+          transition: theme.transitions.create(["all"]),
+          "&:hover": {
             // bgcolor: 'background.paper',
-            color: '#5C6BC0',
+            color: "#5C6BC0",
             boxShadow: theme.vars.customShadows.z24,
-            '& .icon': {
-              color: 'common.white',
-              bgcolor: '#5C6BC0',
-              transition: theme.transitions.create(['all']),
+            "& .icon": {
+              color: "common.white",
+              bgcolor: "#5C6BC0",
+              transition: theme.transitions.create(["all"]),
             },
           },
         })}
@@ -153,7 +153,7 @@ function CategoryItem({ category }: CategoryItemProps) {
         <Box
           className="icon"
           component="span"
-          sx={{ display: 'flex', p: 2, mb: 1, borderRadius: '50%' }}
+          sx={{ display: "flex", p: 2, mb: 1, borderRadius: "50%" }}
         >
           <SvgColor src={category.icon} sx={{ width: 40, height: 40 }} />
         </Box>
@@ -161,7 +161,7 @@ function CategoryItem({ category }: CategoryItemProps) {
         <Typography variant="h6" noWrap sx={{ px: 2, width: 1 }}>
           {category.name}
         </Typography>
-        <Typography variant="body2" sx={{ mt: 0.5, color: 'text.disabled' }}>
+        <Typography variant="body2" sx={{ mt: 0.5, color: "text.disabled" }}>
           {/* {category.totalJobs} jobs */}
         </Typography>
       </Paper>

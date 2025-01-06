@@ -1,13 +1,13 @@
-import type { BoxProps } from '@mui/material/Box';
+import type { BoxProps } from "@mui/material/Box";
 
-import AutoScroll from 'embla-carousel-auto-scroll';
+import AutoScroll from "embla-carousel-auto-scroll";
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { SvgColor } from 'src/components/svg-color';
-import { Carousel, useCarousel } from 'src/components/carousel';
+import { SvgColor } from "src/components/svg-color";
+import { Carousel, useCarousel } from "src/components/carousel";
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ type Props = BoxProps & {
 };
 
 export function ElearningOurClients({ brands, sx, ...other }: Props) {
-  const carousel = useCarousel({ loop: true, slidesToShow: 'auto', slideSpacing: '80px' }, [
+  const carousel = useCarousel({ loop: true, slidesToShow: "auto", slideSpacing: "80px" }, [
     AutoScroll({ playOnInit: true, speed: 0.5 }),
   ]);
 
@@ -31,13 +31,22 @@ export function ElearningOurClients({ brands, sx, ...other }: Props) {
       {...other}
     >
       <Container>
-        <Box sx={{ textAlign: 'center', mb: { xs: 5, md: 10 } }}>
-          <Typography variant="h2" sx={{ mb: 3 }}>
-            We work with
-          </Typography>
+        <div className="flex justify-center font-semibold text-3xl mb-5 mx-auto px-8">
+          <h1 className="text-4xl">
+            Sobre a <span className="text-indigo-400">Empresa</span>
+          </h1>
+        </div>
 
-          <Typography sx={{ color: 'text.secondary' }}>
-            Quisque aliquet, libero consequat elementum convallis.
+        <Box sx={{ textAlign: "center", mb: { xs: 5, md: 10 } }}>
+          <Typography className="px-8" sx={{ color: "text.secondary" }}>
+            A Fradema Consultores Tributários, está há 37 anos no mercado, possuindo vasta
+            experiência e qualificação para pensar nas melhores soluções em consultoria tributária
+            para o seu negócio. Com atuação desde 1988, a Fradema Consultores Tributários possui
+            forte atuação em estratégias empresariais e procedimento administrativos nas esferas
+            federal, estadual e municipal, com filiais em todo o território nacional e agora
+            Internacional. Nossos escritórios estão localizados no Distrito Federal, Bahia,
+            Pernambuco, Espírito Santo, Minas Gerais, Rio de Janeiro, Santa Catarina, São Paulo,
+            Paraná e Amazonas. Novas filiais em "New York" e Orlando.
           </Typography>
         </Box>
 
@@ -46,7 +55,7 @@ export function ElearningOurClients({ brands, sx, ...other }: Props) {
             <SvgColor
               key={brand.id}
               src={brand.image}
-              sx={{ width: 106, height: 32, color: 'text.primary' }}
+              sx={{ width: 106, height: 32, color: "text.primary" }}
             />
           ))}
         </Carousel>

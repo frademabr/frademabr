@@ -1,14 +1,14 @@
-import type { BoxProps } from '@mui/material/Box';
-import type { ICaseStudyProps } from 'src/types/case-study';
+import type { BoxProps } from "@mui/material/Box";
+import type { ICaseStudyProps } from "src/types/case-study";
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from "react";
 
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Pagination, { paginationClasses } from '@mui/material/Pagination';
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import Tabs from "@mui/material/Tabs";
+import Pagination, { paginationClasses } from "@mui/material/Pagination";
 
-import { MarketingCaseStudyItem } from './marketing-case-study-item';
+import { MarketingCaseStudyItem } from "./marketing-case-study-item";
 
 // ----------------------------------------------------------------------
 
@@ -17,11 +17,11 @@ type Props = BoxProps & {
 };
 
 export function MarketingCaseStudyList({ caseStudies, sx, ...other }: Props) {
-  const [currentTab, setCurrentTab] = useState('All');
+  const [currentTab, setCurrentTab] = useState("All");
 
   const getCategories = caseStudies.map((project) => project.category);
 
-  const categories = ['All', ...Array.from(new Set(getCategories))];
+  const categories = ["Todas", ...Array.from(new Set(getCategories))];
 
   const dataFiltered = applyFilter({ inputData: caseStudies, query: currentTab });
 
@@ -46,11 +46,11 @@ export function MarketingCaseStudyList({ caseStudies, sx, ...other }: Props) {
         sx={[
           {
             gap: 4,
-            display: 'grid',
+            display: "grid",
             gridTemplateColumns: {
-              xs: 'repeat(1, 1fr)',
-              sm: 'repeat(2, 1fr)',
-              md: 'repeat(3, 1fr)',
+              xs: "repeat(1, 1fr)",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
             },
             pt: 5,
             pb: 10,
@@ -66,7 +66,7 @@ export function MarketingCaseStudyList({ caseStudies, sx, ...other }: Props) {
 
       <Pagination
         count={10}
-        sx={{ pb: 10, [`& .${paginationClasses.ul}`]: { justifyContent: 'center' } }}
+        sx={{ pb: 10, [`& .${paginationClasses.ul}`]: { justifyContent: "center" } }}
       />
     </>
   );
@@ -80,7 +80,7 @@ type ApplyFilterProps = {
 };
 
 function applyFilter({ inputData, query }: ApplyFilterProps) {
-  if (query !== 'All') {
+  if (query !== "All") {
     inputData = inputData.filter((project) => project.category === query);
   }
 

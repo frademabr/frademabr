@@ -1,42 +1,42 @@
-import type { Variants } from 'framer-motion';
-import type { BoxProps } from '@mui/material/Box';
+import type { Variants } from "framer-motion";
+import type { BoxProps } from "@mui/material/Box";
 
-import { m } from 'framer-motion';
-import { useState, useCallback } from 'react';
+import { m } from "framer-motion";
+import { useState, useCallback } from "react";
 
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid2';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Accordion from '@mui/material/Accordion';
-import Typography from '@mui/material/Typography';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid2";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Accordion from "@mui/material/Accordion";
+import Typography from "@mui/material/Typography";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
 
-import { TrianglePattern } from 'src/assets/illustrations/components/shape-pattern';
+import { TrianglePattern } from "src/assets/illustrations/components/shape-pattern";
 
-import { Iconify } from 'src/components/iconify';
-import { varFade, MotionViewport } from 'src/components/animate';
+import { Iconify } from "src/components/iconify";
+import { varFade, MotionViewport } from "src/components/animate";
 
-import BlurryBlob from 'src/components/animata/background/blurry-blob';
-import { MarketingContactInfo } from '../_filiais/contact/marketing-contact-info';
+import BlurryBlob from "src/components/animata/background/blurry-blob";
+import { MarketingContactInfo } from "../_filiais/contact/marketing-contact-info";
 
-import { Divider } from 'src/components/catalyst-layout/divider';
+import { Divider } from "src/components/catalyst-layout/divider";
 
 // ----------------------------------------------------------------------
 
 const FAQs = [
   {
-    question: 'Qual a diferença entre tributos, impostos e taxas?',
+    question: "Qual a diferença entre tributos, impostos e taxas?",
     answer: (
       <Typography>
-        Conforme disposto no artigo 3º do Código Tributário Nacional (CTN),{' '}
+        Conforme disposto no artigo 3º do Código Tributário Nacional (CTN),{" "}
         <strong>
           tributo é “toda prestação pecuniária compulsória, em moeda ou cujo valor nela se possa
           exprimir, que não constitua sanção de ato ilícito, instituída em lei e cobrada mediante
           atividade administrativa plenamente vinculada”.
-        </strong>{' '}
+        </strong>{" "}
         A CF em seus arts. 145, 149, 149-A, classifica os tributos pela Pentapartição (impostos,
         taxas, contribuições de melhoria, empréstimos compulsórios e contribuições especiais). E o
         CTN em seu art. 5º segue a teoria da Tripartição (impostos, taxas e contribuições de
@@ -66,17 +66,17 @@ const FAQs = [
     ),
   },
   {
-    question: 'Como faço para pagar menos imposto?',
+    question: "Como faço para pagar menos imposto?",
     answer: (
-      <Box component="ul" sx={{ pl: 3, listStyleType: 'disc' }}>
+      <Box component="ul" sx={{ pl: 3, listStyleType: "disc" }}>
         <Typography>Neste caso o ideal é: </Typography>
         <li>
-          {' '}
+          {" "}
           Analisar o melhor regime tributário que poderá ser feito à partir de uma Auditoria Fiscal
           com base nas informações prestadas aos órgãos federais, estaduais e/ou municipais.
         </li>
         <li>
-          {' '}
+          {" "}
           Marcar uma reunião presencial para conseguir entender as reais intenções dos empresários,
           bem como a rotina empresarial para uma melhor análise..
         </li>
@@ -97,16 +97,16 @@ const FAQs = [
     ),
   },
   {
-    question: 'How long is my license valid for?',
+    question: "How long is my license valid for?",
     answer: (
-      <Box component="ul" sx={{ pl: 3, listStyleType: 'disc' }}>
+      <Box component="ul" sx={{ pl: 3, listStyleType: "disc" }}>
         <li> The license is lifetime.</li>
         <li> You get 12 months of free updates.</li>
       </Box>
     ),
   },
   {
-    question: 'Which platforms will the template support?',
+    question: "Which platforms will the template support?",
     answer: (
       <Typography>
         {`The components in MUI are designed to work in the latest, stable releases of all major browsers, including Chrome, Firefox, Safari, and Edge. We don't support Internet Explorer 11. `}
@@ -118,7 +118,7 @@ const FAQs = [
     ),
   },
   {
-    question: 'For what kind of projects is the Standard license intended?',
+    question: "For what kind of projects is the Standard license intended?",
     answer: (
       <Typography>
         The Standard license is designed for internal applications in which staff will access the
@@ -128,7 +128,7 @@ const FAQs = [
     ),
   },
   {
-    question: 'Do you have a free demo to review the code before purchasing?',
+    question: "Do you have a free demo to review the code before purchasing?",
     answer: (
       <Typography>
         Yes, you can check out our
@@ -144,7 +144,7 @@ const FAQs = [
 
 // ----------------------------------------------------------------------
 
-const variants: Variants = varFade('inUp', { distance: 24 });
+const variants: Variants = varFade("inUp", { distance: 24 });
 
 export function HomeFAQs({ sx, ...other }: BoxProps) {
   const [expanded, setExpanded] = useState<string | false>(false);
@@ -171,12 +171,12 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               </Typography>
 
               <Iconify
-                icon={expanded === faq.question ? 'eva:minus-outline' : 'eva:plus-outline'}
-                sx={{ transform: 'translateY(4px)' }}
+                icon={expanded === faq.question ? "eva:minus-outline" : "eva:plus-outline"}
+                sx={{ transform: "translateY(4px)" }}
               />
             </AccordionSummary>
 
-            <AccordionDetails sx={{ color: 'text.secondary' }}>{faq.answer}</AccordionDetails>
+            <AccordionDetails sx={{ color: "text.secondary" }}>{faq.answer}</AccordionDetails>
           </Accordion>
         ))}
       </Box>
@@ -185,14 +185,14 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
 
   return (
     <>
-      <Divider my-6 />
+      <Divider soft my-6 />
       <Box
         component="section"
         sx={[
           {
-            position: 'relative',
-            paddingTop: '-10px',
-            marginBottom: '20px',
+            position: "relative",
+            paddingTop: "-10px",
+            marginBottom: "20px",
             py: { xs: 5, md: 10 },
           },
           ...(Array.isArray(sx) ? sx : [sx]),
@@ -200,7 +200,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
         {...other}
       >
         <Container component={MotionViewport}>
-          <Grid container spacing={{ md: 3 }} sx={{ justifyContent: 'center' }}>
+          <Grid container spacing={{ md: 3 }} sx={{ justifyContent: "center" }}>
             <Grid size={{ xs: 12, md: 8 }}>
               <m.div variants={variants}>
                 <h2 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
@@ -213,11 +213,11 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               <Box
                 sx={(theme) => ({
                   gap: 3,
-                  display: 'flex',
+                  display: "flex",
                   borderRadius: 3,
-                  textAlign: 'center',
-                  alignItems: 'center',
-                  flexDirection: 'column',
+                  textAlign: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
                   px: { xs: 3, md: 5 },
                   py: { xs: 6, md: 8 },
                   border: `dashed 1px ${theme.vars.palette.divider}`,
@@ -231,7 +231,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                   </Typography>
                 </m.div>
                 <m.div>
-                  <Typography sx={{ color: 'text.secondary' }}>
+                  <Typography sx={{ color: "text.secondary" }}>
                     Entre em contato com um de nossos especialistas!
                   </Typography>
                   <BlurryBlob
@@ -262,7 +262,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               left: 0,
               right: 500,
               zIndex: -1,
-              mx: 'auto',
+              mx: "auto",
               width: 600,
               height: 600,
               maxWidth: 1,
@@ -274,7 +274,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               left: 0,
               right: 500,
               zIndex: -1,
-              mx: 'auto',
+              mx: "auto",
               width: 600,
               height: 600,
               maxWidth: 1,
@@ -287,7 +287,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               left: 0,
               right: 0,
               zIndex: -1,
-              mx: 'auto',
+              mx: "auto",
               width: 600,
               height: 600,
               maxWidth: 1,
@@ -300,7 +300,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               left: 0,
               right: 0,
               zIndex: -1,
-              mx: 'auto',
+              mx: "auto",
               width: 600,
               height: 600,
               maxWidth: 1,

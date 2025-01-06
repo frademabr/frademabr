@@ -1,16 +1,16 @@
-import type { BoxProps } from '@mui/material/Box';
+import type { BoxProps } from "@mui/material/Box";
 
-import { varAlpha } from 'minimal-shared/utils';
+import { varAlpha } from "minimal-shared/utils";
 
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
-import Container from '@mui/material/Container';
+import Container from "@mui/material/Container";
 
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
-import { CONFIG } from 'src/global-config';
+import { CONFIG } from "src/global-config";
 
-import { Divider } from '@mui/material';
+import { Divider } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
@@ -48,12 +48,12 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         sx={[
           (theme) => ({
             // paddingBottom: '40px',
-            paddingTop: '180px',
+            paddingTop: "190px",
             ...theme.mixins.bgGradient({
               images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
-            color: 'common.white',
-            borderBottomStyle: 'inset',
+            color: "common.white",
+            borderBottomStyle: "inset",
           }),
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
@@ -62,17 +62,18 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         {/* <Container className="mb-5"></Container> */}
         <Typography
           className=""
-          // marginTop={'70px'}
-          // paddingBottom={'80px'}
-          fontSize={'182px'}
-          fontWeight={'900'}
+          // marginTop={"-70px"}
+          paddingBottom={"8px"}
+          paddingTop={"30px"}
+          fontSize={"182px"}
+          fontWeight={"900"}
           sx={{
-            textAlign: 'center',
+            textAlign: "center",
             // color: '#5C6BC0',
-            mixBlendMode: 'soft-light',
+            mixBlendMode: "soft-light",
             // color: 'InfoBackground',
             mb: { xs: 5, md: 10 },
-            mx: 'auto',
+            mx: "auto",
           }}
         >
           FRADEMA
@@ -87,9 +88,9 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
                   `url(${CONFIG.assetsDir}/assets/images/home/nyblue.png)`,
                 ],
               }),
-              color: 'common.white',
+              color: "common.white",
               py: { xs: 30, md: 35 },
-              marginTop: '-230px',
+              marginTop: "-230px",
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
@@ -140,7 +141,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           {/* </Container> */}
         </Box>
       </Box>
-      <Divider component="section" className="h-0 border-r-8  bg-gray-600" />
+      {/* <Divider component="section" className="h-0 border-r-8  bg-gray-600" /> */}
     </div>
   );
 }
