@@ -22,14 +22,13 @@ import {
 import { Divider } from "src/components/catalyst-layout/divider";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MarketingContactSchema } from "lib/schema";
-import { BoxProps } from "@mui/material";
 
 //-----------------------------------------------------------------------------------------
 export type IFormInput = z.infer<typeof MarketingContactSchema>;
 
 // import zod schema
 //------------------------------------------------------------------------------------------
-export function MarketingContact({ sx, ...other }: BoxProps) {
+export function MarketingContact() {
   const defaultValues: IFormInput = {
     filiais: [],
     outros: [],
