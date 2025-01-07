@@ -17,7 +17,7 @@ type Props = BoxProps & {
 };
 
 export function MarketingCaseStudyList({ caseStudies, sx, ...other }: Props) {
-  const [currentTab, setCurrentTab] = useState("All");
+  const [currentTab, setCurrentTab] = useState("Todas");
 
   const getCategories = caseStudies.map((project) => project.category);
 
@@ -64,10 +64,10 @@ export function MarketingCaseStudyList({ caseStudies, sx, ...other }: Props) {
         ))}
       </Box>
 
-      <Pagination
+      {/* <Pagination
         count={10}
         sx={{ pb: 10, [`& .${paginationClasses.ul}`]: { justifyContent: "center" } }}
-      />
+      /> */}
     </>
   );
 }

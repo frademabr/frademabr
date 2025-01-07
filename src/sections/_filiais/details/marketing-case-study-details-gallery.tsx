@@ -1,13 +1,13 @@
-import type { BoxProps } from '@mui/material/Box';
+import type { BoxProps } from "@mui/material/Box";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
-import { Image } from 'src/components/image';
-import { Lightbox, useLightBox } from 'src/components/lightbox';
-import { Carousel, useCarousel, CarouselArrowBasicButtons } from 'src/components/carousel';
+import { Image } from "src/components/image";
+import { Lightbox, useLightBox } from "src/components/lightbox";
+import { Carousel, useCarousel, CarouselArrowBasicButtons } from "src/components/carousel";
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ export function MarketingCaseStudyDetailsGallery({ images, sx, ...other }: Props
 
   const lightbox = useLightBox(slides);
 
-  const carousel = useCarousel({ slidesToShow: { xs: 1, sm: 2, md: 3 }, slideSpacing: '16px' });
+  const carousel = useCarousel({ slidesToShow: { xs: 1, sm: 2, md: 3 }, slideSpacing: "16px" });
 
   useEffect(() => {
     if (lightbox.open) {
@@ -31,8 +31,8 @@ export function MarketingCaseStudyDetailsGallery({ images, sx, ...other }: Props
   return (
     <>
       <Box sx={[{ mt: 3 }, ...(Array.isArray(sx) ? sx : [sx])]} {...other}>
-        <Box sx={{ display: 'flex', alignItems: 'center', mb: 5 }}>
-          <Typography variant="h4" sx={{ flexGrow: 1 }}>
+        <Box sx={{ display: "flex", alignItems: "center", mb: 5 }}>
+          <Typography className="text-green-600" variant="h4" sx={{ flexGrow: 1 }}>
             Fotos
           </Typography>
           <CarouselArrowBasicButtons
@@ -50,7 +50,7 @@ export function MarketingCaseStudyDetailsGallery({ images, sx, ...other }: Props
               src={slide.src}
               ratio="4/3"
               onClick={() => lightbox.onOpen(slide.src)}
-              sx={{ borderRadius: 2, cursor: 'pointer' }}
+              sx={{ borderRadius: 2, cursor: "pointer" }}
             />
           ))}
         </Carousel>

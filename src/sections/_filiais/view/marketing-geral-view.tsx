@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import type { ICaseStudyProps } from 'src/types/case-study';
+import type { ICaseStudyProps } from "src/types/case-study";
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { _testimonials, _marketingPosts } from 'src/_mock';
+import { _testimonials, _marketingPosts } from "src/_mock";
 
-import { MarketingNewsletter } from '../marketing-newsletter';
-import { MarketingLatestPosts } from '../posts/marketing-latest-posts';
-import { MarketingCaseStudyList } from '../list/marketing-case-study-list';
+import { MarketingNewsletter } from "../marketing-newsletter";
+import { MarketingLatestPosts } from "../posts/marketing-latest-posts";
+import { MarketingCaseStudyList } from "../list/marketing-case-study-list";
 
 // ----------------------------------------------------------------------
 
@@ -25,13 +25,13 @@ export function MarketingCaseStudiesView({ caseStudies }: Props) {
     <Box
       sx={{
         py: { xs: 3, md: 5 },
-        textAlign: { xs: 'center', md: 'left' },
+        textAlign: { xs: "center", md: "left" },
       }}
     >
-      <Typography variant="h2"> Filiais</Typography>
-      <Typography sx={{ mt: 3, color: 'text.secondary' }}>
-        Subtítulo aqui, explicação , informativo
-        <br /> Mauris sollicitudin fermentum libero.
+      <h1 className="text-green-600 font-bold text-4xl"> Filiais</h1>
+      <Typography sx={{ mt: 3, color: "text.secondary" }}>
+        Conheça um pouco sobre elas.
+        <br />
       </Typography>
     </Box>
   );
@@ -44,8 +44,6 @@ export function MarketingCaseStudiesView({ caseStudies }: Props) {
           <MarketingCaseStudyList caseStudies={caseStudies} />
         </Container>
       </Box>
-
-      <MarketingLatestPosts posts={latestPosts} />
 
       <MarketingNewsletter />
     </>
