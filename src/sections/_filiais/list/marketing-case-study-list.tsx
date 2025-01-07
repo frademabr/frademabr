@@ -80,7 +80,7 @@ type ApplyFilterProps = {
 };
 
 function applyFilter({ inputData, query }: ApplyFilterProps) {
-  if (query !== "All") {
+  if (query !== "Todas") {
     inputData = inputData.filter((project) => project.category === query);
   }
 

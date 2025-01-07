@@ -110,7 +110,7 @@ export const pageLinks = [
 export const navData = [
   { title: "Home", path: "/" },
   { title: "Filiais", path: paths.filiais.caseStudies }, // paths.marketing.caseStudies
-  { title: "Páginas", path: "#" }, // paths.pages, children: pageLinks
+  // { title: "Páginas", path: "#" }, paths.pages, children: pageLinks
   { title: "Blog", path: "#" },
   { title: "Serviços", path: "#" }, // páginas vai virar serviços com dropdown
   { title: "Sobre Nós", path: "#" },
