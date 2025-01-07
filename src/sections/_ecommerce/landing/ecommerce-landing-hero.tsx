@@ -1,33 +1,33 @@
-import type { BoxProps } from '@mui/material/Box';
-import type { IProductItemHeroProps } from 'src/types/product';
+import type { BoxProps } from "@mui/material/Box";
+import type { IProductItemHeroProps } from "src/types/product";
 
-import { GlareCard } from '@components/components/ui/glare-card';
+import { GlareCard } from "@components/components/ui/glare-card";
 
-import Fade from 'embla-carousel-fade';
-import Autoplay from 'embla-carousel-autoplay';
-import { varAlpha } from 'minimal-shared/utils';
+import Fade from "embla-carousel-fade";
+import Autoplay from "embla-carousel-autoplay";
+import { varAlpha } from "minimal-shared/utils";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
+import { paths } from "src/routes/paths";
+import { RouterLink } from "src/routes/components";
 
-import { CONFIG } from 'src/global-config';
-import { _productsCarousel } from 'src/_mock';
+import { CONFIG } from "src/global-config";
+import { _productsCarousel } from "src/_mock";
 
-import { Label } from 'src/components/label';
-import { Iconify } from 'src/components/iconify';
+import { Label } from "src/components/label";
+import { Iconify } from "src/components/iconify";
 import {
   Carousel,
   useCarousel,
   CarouselDotButtons,
   CarouselArrowBasicButtons,
-} from 'src/components/carousel';
-import { Divider } from '@mui/material';
-import { Image } from 'src/components/image';
+} from "src/components/carousel";
+import { Divider } from "@mui/material";
+import { Image } from "src/components/image";
 
 // ----------------------------------------------------------------------
 
@@ -47,8 +47,8 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
                 // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
               ],
             }),
-            overflow: 'hidden',
-            position: 'relative',
+            overflow: "hidden",
+            position: "relative",
           }),
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
@@ -59,16 +59,16 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
           component="img"
           alt="Texture"
           src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-          sx={{ top: 0, right: 0, height: 4, width: 'auto', position: 'absolute' }}
+          sx={{ top: 0, right: 0, height: 4, width: "auto", position: "absolute" }}
         />
 
-        <Container sx={{ position: 'relative', marginTop: '-80px' }}>
+        <Container sx={{ position: "relative", marginTop: "-80px" }}>
           <Box
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              transform: 'translateY(-64px)',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              transform: "translateY(-64px)",
             }}
           >
             {/* <Image src={`...${CONFIG.assetsDir}/assets/images/home/headertop.jpeg`} /> */}
@@ -146,11 +146,11 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
           py: 15,
           opacity: 0,
           minHeight: 720,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexDirection: { xs: 'column', md: 'row' },
-          transition: theme.transitions.create(['opacity'], {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexDirection: { xs: "column", md: "row" },
+          transition: theme.transitions.create(["opacity"], {
             easing: theme.transitions.easing.easeIn,
             duration: theme.transitions.duration.complex,
           }),
@@ -161,9 +161,9 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
       <Box
         sx={{
           maxWidth: 440,
-          color: 'common.white',
-          mx: { xs: 'auto', md: 'unset' },
-          textAlign: { xs: 'center', md: 'unset' },
+          color: "common.white",
+          mx: { xs: "auto", md: "unset" },
+          textAlign: { xs: "center", md: "unset" },
         }}
       >
         <Label variant="filled" color="warning" sx={{ mb: 2 }}>
@@ -181,7 +181,7 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
           {product.caption}
         </Typography>
 
-        <Button
+        {/* <Button
           component={RouterLink}
           href={paths.eCommerce.product}
           size="large"
@@ -190,7 +190,7 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
           endIcon={<Iconify width={16} icon="solar:alt-arrow-right-outline" sx={{ ml: -0.5 }} />}
         >
           Saiba mais
-        </Button>
+        </Button> */}
       </Box>
 
       <Box
