@@ -43,7 +43,7 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
         {...other}
       >
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-sky-700">
+          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-blue-900">
             As melhores estratégias
           </h2>
           <p className="mb-6 ml-6 mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
@@ -93,9 +93,9 @@ type CategoryItemProps = {
 
 function CategoryItem({ category }: CategoryItemProps) {
   return (
-    <div className="hover:fill-sky-600">
+    <div className="hover:fill-blue-900">
       <Paper
-        className="mb-3 outline shadow-2xl outline-sky-600 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-sky-600"
+        className="mb-3 outline shadow-2xl outline-blue-900 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-blue-900"
         // variant="outlined"
         sx={(theme) => ({
           p: 0,
@@ -116,11 +116,11 @@ function CategoryItem({ category }: CategoryItemProps) {
           transition: theme.transitions.create(["all"]),
           "&:hover": {
             // bgcolor: 'background.paper',
-            color: "#0284c7",
+            color: "#1e3a8a",
             boxShadow: theme.vars.customShadows.z24,
             "& .icon": {
               color: "common.white",
-              bgcolor: "#0284c7",
+              bgcolor: "#1e3a8a",
               transition: theme.transitions.create(["all"]),
             },
           },

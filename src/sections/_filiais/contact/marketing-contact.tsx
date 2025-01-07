@@ -77,7 +77,7 @@ export function MarketingContact() {
         <div className="ml-20 w-full pb-10 md:space-y-10 md:pb-0">
           <div className="space-y-4 md:max-w-[40rem]">
             <h1 className="text-4xl font-bold lg:text-5xl ml-3">
-              Fale com um de nossos <span className="text-sky-600">Consultores</span>
+              Fale com um de nossos <span className="text-blue-800">Consultores</span>
             </h1>
             <div className="text-muted-foreground md:text-base lg:text-lg lg:leading-7 ml-3">
               In non libero bibendum odio pellentesque ullamcorper. Aenean condimentum, dolor
@@ -118,7 +118,7 @@ export function MarketingContact() {
                 </div>
               </div>
               <div className="flex items-center space-x-12 ml-3">
-                <img
+                {/* <img
                   src="https://shadcnblocks.com/images/block/logos/astro.svg"
                   alt="placeholder"
                   className="h-6"
@@ -127,7 +127,7 @@ export function MarketingContact() {
                   src="https://shadcnblocks.com/images/block/logos/shadcn-ui.svg"
                   alt="placeholder"
                   className="h-6"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@ export function MarketingContact() {
                   <div className="flex w-full flex-col justify-end space-y-3 pt-2">
                     <Button
                       onClick={handleSubmit(onSubmit)}
-                      className="bg-sky-600 hover:bg-sky-700 text-white"
+                      className="bg-blue-800 hover:bg-blue-900 text-white"
                       type="submit"
                     >
                       Enviar formulário
