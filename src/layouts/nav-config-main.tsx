@@ -113,4 +113,5 @@ export const navData = [
   { title: "Páginas", path: "#" }, // paths.pages, children: pageLinks
   { title: "Blog", path: "#" },
   { title: "Serviços", path: "#" }, // páginas vai virar serviços com dropdown
+  { title: "Sobre Nós", path: "#" },
 ];
