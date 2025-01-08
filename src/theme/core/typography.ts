@@ -1,11 +1,11 @@
-import type { CSSObject, Breakpoint } from '@mui/material/styles';
-import type { TypographyOptions } from '@mui/material/styles/createTypography';
+import type { CSSObject, Breakpoint } from "@mui/material/styles";
+import type { TypographyOptions } from "@mui/material/styles/createTypography";
 
-import { pxToRem, setFont } from 'minimal-shared/utils';
+import { pxToRem, setFont } from "minimal-shared/utils";
 
-import { createTheme as getTheme } from '@mui/material/styles';
+import { createTheme as getTheme } from "@mui/material/styles";
 
-import { themeConfig } from '../theme-config';
+import { themeConfig } from "../theme-config";
 
 // ----------------------------------------------------------------------
 
@@ -14,8 +14,8 @@ import { themeConfig } from '../theme-config';
  * @to {@link file://./../extend-theme-types.d.ts}
  */
 export type FontStyleExtend = {
-  fontWeightSemiBold: CSSObject['fontWeight'];
-  fontSecondaryFamily: CSSObject['fontFamily'];
+  fontWeightSemiBold: CSSObject["fontWeight"];
+  fontSecondaryFamily: CSSObject["fontFamily"];
 };
 
 export type ResponsiveFontSizesInput = Partial<Record<Breakpoint, number>>;
@@ -45,13 +45,13 @@ const primaryFont = setFont(themeConfig.fontFamily.primary);
 const secondaryFont = setFont(themeConfig.fontFamily.secondary);
 
 export const typography: TypographyOptions = {
-  fontFamily: primaryFont,
+  fontFamily: secondaryFont,
   fontSecondaryFamily: secondaryFont,
-  fontWeightLight: '300',
-  fontWeightRegular: '400',
-  fontWeightMedium: '500',
-  fontWeightSemiBold: '700',
-  fontWeightBold: '900',
+  fontWeightLight: "300",
+  fontWeightRegular: "400",
+  fontWeightMedium: "500",
+  fontWeightSemiBold: "700",
+  fontWeightBold: "900",
   h1: {
     fontFamily: secondaryFont,
     fontWeight: 900,
@@ -117,12 +117,12 @@ export const typography: TypographyOptions = {
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: pxToRem(12),
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
   },
   button: {
     fontWeight: 700,
     lineHeight: 24 / 14,
     fontSize: pxToRem(14),
-    textTransform: 'unset',
+    textTransform: "unset",
   },
 };

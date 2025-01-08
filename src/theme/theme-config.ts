@@ -36,7 +36,7 @@ export const themeConfig: ThemeConfig = {
    * Typography
    *************************************** */
   fontFamily: {
-    primary: "Poppins",
+    primary: "Inter",
     secondary: "Inter",
   },
   /** **************************************

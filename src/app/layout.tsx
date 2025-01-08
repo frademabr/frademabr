@@ -23,7 +23,7 @@ import { SettingsDrawer, defaultSettings, SettingsProvider } from "src/component
 // ----------------------------------------------------------------------
 const inter = Inter({
   weight: ["300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
+  style: ["normal"],
   subsets: ["latin"],
 });
 
