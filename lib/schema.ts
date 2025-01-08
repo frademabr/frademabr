@@ -1,11 +1,11 @@
 import * as z from "zod";
 
 export const MarketingContactSchema = z.object({
+  id: z.number(),
   filiais: z
-    .string({ message: "Escolha uma filial Fradema!" })
-    .array()
-    .min(3, { message: "Escolha uma filial Fradema!" }),
-  outros: z.string().array().optional(),
+    // .string({ message: "Escolha uma filial Fradema!" })
+    .array(z.string()),
+  outros: z.array(z.string()).optional(),
   email: z.string().email({ message: "Email precisa ser válido!" }),
   empresa: z.string().optional(),
   nome: z
@@ -17,3 +17,13 @@ export const MarketingContactSchema = z.object({
     .regex(/^[0-9]*$/)
     .min(11, { message: "Celular deve ser no formato com DDD (xx)" }),
 });
+
+// const marketingContact = MarketingContactSchema.parse({
+//   id: 1,
+//   filiais: ["Fradema - RJ"],
+//   outros: ["Web"],
+//   email: "kxzww7@gmail.com",
+//   empresa: "Arinelli",
+//   nome: "Patrick",
+//   cel: "21991026185",
+// });
