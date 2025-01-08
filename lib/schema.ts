@@ -1,7 +1,7 @@
 import * as z from "zod";
 
 export const MarketingContactSchema = z.object({
-  id: z.number(),
+  id: z.string().cuid(),
   filiais: z
     // .string({ message: "Escolha uma filial Fradema!" })
     .array(z.string()),

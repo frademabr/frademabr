@@ -22,6 +22,8 @@ import {
 import { Divider } from "src/components/catalyst-layout/divider";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MarketingContactSchema } from "lib/schema";
+import { uuidv4 } from "minimal-shared/utils";
+import { serialize } from "v8";
 
 //-----------------------------------------------------------------------------------------
 export type IFormInput = z.infer<typeof MarketingContactSchema>;
@@ -30,6 +32,7 @@ export type IFormInput = z.infer<typeof MarketingContactSchema>;
 //------------------------------------------------------------------------------------------
 export function MarketingContact() {
   const defaultValues: IFormInput = {
+    id: "",
     filiais: [],
     outros: [],
     email: "",
@@ -77,7 +80,7 @@ export function MarketingContact() {
         <div className="ml-20 w-full pb-10 md:space-y-10 md:pb-0">
           <div className="space-y-4 md:max-w-[40rem]">
             <h1 className="text-4xl font-bold lg:text-5xl ml-3">
-              Fale com um de nossos <span className="text-blue-800">Consultores</span>
+              Fale com um de nossos <span className="text-blue-700">Consultores</span>
             </h1>
             <div className="text-muted-foreground md:text-base lg:text-lg lg:leading-7 ml-3">
               In non libero bibendum odio pellentesque ullamcorper. Aenean condimentum, dolor
@@ -246,7 +249,7 @@ export function MarketingContact() {
                   <div className="flex w-full flex-col justify-end space-y-3 pt-2">
                     <Button
                       onClick={handleSubmit(onSubmit)}
-                      className="bg-blue-800 hover:bg-blue-900 text-white"
+                      className="bg-blue-700 hover:bg-blue-800 text-white"
                       type="submit"
                     >
                       Enviar formulário

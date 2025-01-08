@@ -43,7 +43,7 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
         {...other}
       >
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-blue-900">
+          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-blue-800">
             As melhores estratégias
           </h2>
           <p className="mb-6 ml-6 mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
