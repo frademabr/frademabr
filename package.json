@@ -2,7 +2,7 @@
   "name": "fradema-web",
   "author": "Patrick Arinelli",
   "version": "v1.0",
-  "description": "Next & TypeScript Fradema Web",
+  "description": "Fradema Connsultoria Tributária",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8002",
@@ -25,14 +25,15 @@
   "engines": {
     "node": "20.x"
   },
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@10.0.0",
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource-variable/dm-sans": "^5.1.0",
-    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/inter": "^5.1.1",
     "@fontsource-variable/nunito-sans": "^5.1.0",
+    "@fontsource-variable/open-sans": "^5.1.1",
     "@fontsource-variable/public-sans": "^5.1.1",
     "@fontsource/barlow": "^5.1.0",
     "@fontsource/roboto": "^5.1.0",

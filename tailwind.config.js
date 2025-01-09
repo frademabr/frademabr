@@ -15,8 +15,7 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ["Inter"],
-        body: ['"Inter"'],
-        sans: ["Inter"],
+        body: ['"Open Sans"'],
       },
       keyframes: {
         "rotate-full": {

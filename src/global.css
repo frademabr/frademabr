@@ -5,11 +5,13 @@
 /** **************************************
 * Fonts: app
 *************************************** */
-@import "@fontsource-variable/inter";
+
+@import '@fontsource-variable/inter';
 
 /** **************************************
 * Fonts: options
 *************************************** */
+@import "@fontsource-variable/open-sans";
 @import "@fontsource-variable/dm-sans";
 
 @import "@fontsource-variable/nunito-sans";
@@ -33,7 +35,6 @@
 html {
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  font-family: "Inter";
 }
 body,
 #root,
@@ -132,5 +133,11 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  @font-face{
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
   }
 }

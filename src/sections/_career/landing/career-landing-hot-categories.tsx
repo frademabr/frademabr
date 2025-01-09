@@ -43,7 +43,7 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
         {...other}
       >
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-blue-800">
+          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-blue-700">
             As melhores estratégias
           </h2>
           <p className="mb-6 ml-6 mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
@@ -93,9 +93,9 @@ type CategoryItemProps = {
 
 function CategoryItem({ category }: CategoryItemProps) {
   return (
-    <div className="hover:fill-blue-900">
+    <div className="hover:fill-blue-800">
       <Paper
-        className="mb-3 outline shadow-2xl outline-blue-900 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-blue-900"
+        className="mb-3 outline shadow-2xl outline-blue-800 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-blue-900"
         // variant="outlined"
         sx={(theme) => ({
           p: 0,

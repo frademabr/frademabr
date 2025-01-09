@@ -36,8 +36,8 @@ export const themeConfig: ThemeConfig = {
    * Typography
    *************************************** */
   fontFamily: {
-    primary: "Inter",
-    secondary: "Inter",
+    primary: 'Inter Variable',
+    secondary: 'Open Sans Variable',
   },
   /** **************************************
    * Palette

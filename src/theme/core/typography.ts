@@ -53,7 +53,7 @@ export const typography: TypographyOptions = {
   fontWeightSemiBold: "700",
   fontWeightBold: "900",
   h1: {
-    fontFamily: secondaryFont,
+    fontFamily: primaryFont,
     fontWeight: 900,
     lineHeight: 80 / 64,
     fontSize: pxToRem(40),
