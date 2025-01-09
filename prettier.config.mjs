@@ -1,3 +1,5 @@
+import plugin from "tailwindcss";
+
 /**
  * @type {import("prettier").Config}
  * Need to restart IDE when changing configuration
@@ -6,10 +8,11 @@
 const config = {
   semi: true,
   tabWidth: 2,
-  endOfLine: 'lf',
+  endOfLine: "lf",
   printWidth: 100,
   singleQuote: false,
-  trailingComma: 'es5',
+  trailingComma: "es5",
+  plugins: "prettier-plugin-tailwindcss",
 };
 
 export default config;
