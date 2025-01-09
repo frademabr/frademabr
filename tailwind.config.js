@@ -12,11 +12,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
-      display: ["Inter"],
-      body: ['"Inter"'],
-    },
     extend: {
+      fontFamily: {
+        display: ["Inter"],
+        body: ['"Inter"'],
+        // sans: ["InterVariable"],
+      },
       keyframes: {
         "rotate-full": {
           "0%": { transform: "rotate(0deg)" },
