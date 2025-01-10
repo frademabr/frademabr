@@ -28,9 +28,8 @@ export function MarketingLandingCaseStudies({ caseStudies, sx, ...other }: Props
   const renderTexts = () => (
     <Box sx={{ textAlign: { xs: 'center', md: 'unset' } }}>
       <Typography variant="overline" sx={{ mb: 3, display: 'block', color: 'text.disabled' }}>
-        Our work
       </Typography>
-      <Typography variant="h2">Filiais</Typography>
+      <Typography className="text-green-600" variant="h2">Filiais</Typography>
     </Box>
   );
 
@@ -94,7 +93,7 @@ export function MarketingLandingCaseStudies({ caseStudies, sx, ...other }: Props
             color="inherit"
             endIcon={<Iconify icon="solar:alt-arrow-right-outline" />}
           >
-            View all
+            Ver todas
           </Button>
         </Box>
       </Container>

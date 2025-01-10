@@ -38,7 +38,7 @@ export function MarketingCaseStudyListSimilar({ caseStudies, sx, ...other }: Pro
             color="inherit"
             endIcon={<Iconify icon="solar:alt-arrow-right-outline" />}
           >
-            View all
+            Ver todas
           </Button>
         </Box>
 
