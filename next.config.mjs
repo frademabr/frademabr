@@ -2,7 +2,10 @@
  * @type {import('next').NextConfig}
  */
 
+
+
 const nextConfig = {
+
   trailingSlash: true,
   modularizeImports: {
     '@mui/icons-material': {
@@ -24,3 +27,4 @@ const nextConfig = {
     return config;
   },
 };
+

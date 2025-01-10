@@ -51,7 +51,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               // paddingBottom: '40px',
               paddingTop: "190px",
               ...theme.mixins.bgGradient({
-                images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
+                images: [`url(${CONFIG.assetsDir}/assets/images/home/skynight.jpg)`],
               }),
               color: "common.white",
               // borderBottomStyle: "inset",
