@@ -6,10 +6,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-import { _testimonials, _marketingPosts } from "src/_mock";
+// import { _testimonials, _marketingPosts } from "src/_mock";
 
-import { MarketingNewsletter } from "../marketing-newsletter";
-import { MarketingLatestPosts } from "../posts/marketing-latest-posts";
 import { MarketingCaseStudyList } from "../list/marketing-case-study-list";
 
 // ----------------------------------------------------------------------
@@ -18,7 +16,7 @@ type Props = {
   caseStudies: ICaseStudyProps[];
 };
 
-const latestPosts = _marketingPosts.slice(0, 4);
+// const latestPosts = _marketingPosts.slice(0, 4);
 
 export function MarketingCaseStudiesView({ caseStudies }: Props) {
   const renderTexts = () => (
@@ -44,8 +42,6 @@ export function MarketingCaseStudiesView({ caseStudies }: Props) {
           <MarketingCaseStudyList caseStudies={caseStudies} />
         </Container>
       </Box>
-
-      <MarketingNewsletter />
     </>
   );
 }

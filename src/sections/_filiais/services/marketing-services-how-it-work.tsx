@@ -49,7 +49,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           sx={[
             (theme) => ({
               // paddingBottom: '40px',
-              paddingTop: "190px",
+              paddingTop: "210px",
               ...theme.mixins.bgGradient({
                 images: [`url(${CONFIG.assetsDir}/assets/images/home/skynight.jpg)`],
               }),

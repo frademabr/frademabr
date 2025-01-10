@@ -43,22 +43,14 @@ export const _offices = ['Jordan', 'Canada', 'Portugal'].map((country, index) =>
 // ----------------------------------------------------------------------
 
 export const _brands = [
-  'airbnb',
-  'dropbox',
-  'facebook',
-  'google',
-  'heroku',
-  'lenovo',
-  'microsoft',
-  'netflix',
-  'slack',
-  'spotify',
-  'tripadvisor',
-  'vimeo',
+  'parceiro_banesco',
+  'parceiro_bb',
+  'parceiro_ubs',
+  'parceiro_merill',
 ].map((brand, index) => ({
   id: _mock.id(index),
   name: brand,
-  image: `${CONFIG.assetsDir}/assets/icons/brands/${brand}.svg`,
+  image: `${CONFIG.assetsDir}/assets/icons/brands/${brand}.png`,
 }));
 
 // ----------------------------------------------------------------------

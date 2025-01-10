@@ -27,7 +27,7 @@ export function MarketingCaseStudyDetailsSummary({
     <Box sx={{ display: 'flex' }}>
       {_socials.map((social) => (
         <IconButton key={social.label}>
-          {social.value === 'twitter' && <TwitterIcon />}
+          {/* {social.value === 'twitter' && <TwitterIcon />} */}
           {social.value === 'facebook' && <FacebookIcon />}
           {social.value === 'instagram' && <InstagramIcon />}
           {social.value === 'linkedin' && <LinkedinIcon />}
@@ -82,7 +82,7 @@ export function MarketingCaseStudyDetailsSummary({
           botar função whatsapp API {website}
         </Link>
       )}
-      {renderItem('Informação Atualizada Em:')}
+      {renderItem('Informação Atualizada:')}
       {todayHours}h{todayMinutes}min
       {renderDivider()}
       <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>

@@ -13,25 +13,22 @@ const TITLES = [
   `Fradema - Salvador`,
   `Fradema - Piraúba`,
   `Fradema - Vitória`,
-  `Fradema - Salvador`,
+  `Fradema - Belo Horizonte`,
+  `Fradema - Curitiba`,
+  `Fradema - Joinville`,
+  `Fradema - Recife`,
+  `Fradema - Manaus`,
+  `Fradema - Zona da Mata`,
+  `Fradema - New York`,
+  `Fradema - Orlando`,
 ];
 
 const CONTENT = `
 <h4>A Filial</h4>
 <p>Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringilla mauris sit amet nibh. Phasellus viverra nulla ut metus varius laoreet.</p>
 
-<h4>Forma de trabalho</h4>
-<p>Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringilla mauris sit amet nibh. Phasellus viverra nulla ut metus varius laoreet.</p>
-<ul>
-    <li>Medical Assistant</li>
-    <li>Web Designer</li>
-    <li>Dog Trainer</li>
-    <li>Nursing Assistant</li>
-    <li>President of Sales</li>
-</ul>
+<h4>Parceiros</h4>
 
-<h4>Resultados</h4>
-<p>Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringilla mauris sit amet nibh. Phasellus viverra nulla ut metus varius laoreet.</p>
 <ul>
     <li>Medical Assistant</li>
     <li>Web Designer</li>
@@ -47,10 +44,11 @@ const getCategory = (index: number) => {
   if ([1, 2].includes(index)) return _tags[1];
   if ([3, 4].includes(index)) return _tags[2];
   if ([5, 6].includes(index)) return _tags[3];
+  if ([7, 8].includes(index)) return _tags[4];
   return _tags[0];
 };
 
-const getGalleryImgs = () => Array.from({ length: 6 }, (_, index) => _mock.image.marketing(index));
+const getGalleryImgs = () => Array.from({ length: 4 }, (_, index) => _mock.image.marketing(index));
 
 export const _caseStudies = TITLES.map((_, index) => ({
   id: _mock.id(index),
