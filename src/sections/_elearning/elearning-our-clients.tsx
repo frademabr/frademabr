@@ -32,8 +32,8 @@ export function ElearningOurClients({ brands, sx, ...other }: Props) {
     >
       <Container>
         <div className="flex justify-center font-semibold text-3xl mb-5 mx-auto px-8">
-          <h1 className="text-4xl">
-            Sobre a <span className="text-blue-800">Empresa</span>
+          <h1 className="text-4xl font-semibold">
+            Sobre a <span className="text-blue-700 font-bold">Empresa</span>
           </h1>
         </div>
 
