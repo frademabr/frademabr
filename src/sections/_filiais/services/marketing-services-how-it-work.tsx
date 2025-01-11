@@ -63,7 +63,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           {/* <Container className="mb-5"></Container> */}
           <div className="tracking-tighter">
             <Typography
-              className="sm:text-5xl 2xl:mb-20"
+              className="md:text-5xl lg:text-6xl 2xl:mb-20"
               // marginTop={"-100px"}
               paddingBottom={"8px"}
               paddingTop={"30px"}

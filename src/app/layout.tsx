@@ -55,8 +55,8 @@ type Props = {
 
 export default async function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
-      <body>
+    <html lang="en" suppressHydrationWarning >
+      <body className={`${inter.className} antialiased`}>
         <InitColorSchemeScript
           defaultMode={themeConfig.defaultMode}
           modeStorageKey={themeConfig.modeStorageKey}
