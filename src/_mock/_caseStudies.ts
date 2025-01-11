@@ -24,7 +24,7 @@ const TITLES = [
 ];
 
 const CONTENT = [`
-<h4 class="text-green-600">A Filial 1</h4>
+<h4 class="text-green-600">A Filial, Rio de Janeiro</h4>
 <p>Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringilla mauris sit amet nibh. Phasellus viverra nulla ut metus varius laoreet.</p>
 
 <h4 class="text-green-600">Parceiros</h4>
@@ -37,7 +37,7 @@ const CONTENT = [`
     <li>President of Sales</li>
 </ul>
 `,
-`<h4 class="text-green-600">A Filial 2</h4>
+`<h4 class="text-green-600">A Filial, São Paulo</h4>
 <p>Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringilla mauris sit amet nibh. Phasellus viverra nulla ut metus varius laoreet.</p>
 
 <h4 class="text-green-600">Parceiros</h4>
@@ -50,7 +50,7 @@ const CONTENT = [`
     <li>President of Sales</li>
 </ul>
 `,
-`<h4 class="text-green-600">A Filial 3</h4>
+`<h4 class="text-green-600">A Filial, Campinas</h4>
 <p>Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringilla mauris sit amet nibh. Phasellus viverra nulla ut metus varius laoreet.</p>
 
 <h4 class="text-green-600">Parceiros</h4>
@@ -86,7 +86,7 @@ const getCategory = (index: number) => {
   return _tags[0];
 };
 
-const getGalleryImgs = () => Array.from({ length: 4 }, (_, index) => _mock.image.marketing(index));
+const getGalleryImgs = () => Array.from({ length: 4 }, (_, index) => _mock.image.marketing(index)); // TROCAR
 
 export const _caseStudies = TITLES.map((_, index) => ({
   id: _mock.id(index),

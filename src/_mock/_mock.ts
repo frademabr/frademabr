@@ -75,11 +75,11 @@ export const _mock = {
     company: (index: number) =>
       `${CONFIG.assetsDir}/assets/images/company/company-${index + 1}.webp`,
     product: (index: number) =>
-      `${CONFIG.assetsDir}/assets/images/z-product/product-${index + 1}.jpg`,
+      `${CONFIG.assetsDir}/assets/images/z-product/product-${index}.jpg`,
     portrait: (index: number) =>
       `${CONFIG.assetsDir}/assets/images/portrait/portrait-${index + 1}.webp`,
     marketing: (index: number) =>
-      `${CONFIG.assetsDir}/assets/images/marketing/marketing-${index + 1}.webp`,
+      `${CONFIG.assetsDir}/assets/images/marketing/marketing-${index + 1}.jpg`,
     marketingHero: (index: number) =>
       `${CONFIG.assetsDir}/assets/images/marketing-hero/marketing-hero-${index + 1}.webp`,
   },
