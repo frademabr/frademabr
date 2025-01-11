@@ -80,6 +80,8 @@ export const _mock = {
       `${CONFIG.assetsDir}/assets/images/portrait/portrait-${index + 1}.webp`,
     marketing: (index: number) =>
       `${CONFIG.assetsDir}/assets/images/marketing/marketing-${index + 1}.webp`,
+    marketingHero: (index: number) =>
+      `${CONFIG.assetsDir}/assets/images/marketing-hero/marketing-hero-${index + 1}.webp`,
   },
   video: (index: number) =>
     [
