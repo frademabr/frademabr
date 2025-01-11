@@ -86,7 +86,8 @@ const getCategory = (index: number) => {
   return _tags[0];
 };
 
-const getGalleryImgs = () => Array.from({ length: 4 }, (_, index) => _mock.image.marketing(index)); // TROCAR
+const getGalleryImgs = () => Array.from({ length: 4 }, (_, index) => _mock.image.marketing(index));
+// TROCAR
 
 export const _caseStudies = TITLES.map((_, index) => ({
   id: _mock.id(index),
