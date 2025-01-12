@@ -37,9 +37,6 @@ export function MarketingContactView() {
           </Grid>
         </Container>
       </Box>
-
-      <MarketingLandingFreeSEO />
-      <MarketingNewsletter />
     </>
   );
 }
